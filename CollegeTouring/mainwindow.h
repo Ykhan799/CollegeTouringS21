@@ -3,8 +3,6 @@
 
 #include <QMainWindow>
 
-#include <databaseviewform.h>
-
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -19,6 +17,7 @@ public:
 
 private slots:
     void on_actionOpen_Campus_Database_triggered();
+    void on_loginButton_clicked();
 
 private:
     Ui::MainWindow *ui;
