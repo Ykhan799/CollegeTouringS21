@@ -5,26 +5,19 @@ databaseViewForm::databaseViewForm(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::databaseViewForm)
 {
+    vector<QString> temp;
+
+    const QString FILE_NAME = "collegetouring.db";
+    QString dbPath = qApp->applicationDirPath();
+    dbPath.append('/' + FILE_NAME);
+    database = new DbManager(dbPath);
+
     ui->setupUi(this);
-    ui->distTableWidget->setColumnCount(2);
-    ui->distTableWidget->setHorizontalHeaderLabels(QStringList{"Campus", "Distance"});
-    ui->distTableWidget->setColumnWidth(0, 289);
-    ui->distTableWidget->setColumnWidth(1, 289);
 
-    ui->distTableWidget->setRowCount(1); // temp
-
-    // populate combo box of colleges
-    // for(...)
-    // ui->collegeSelectBox->addItem(...)
-
-    ui->collegeSelectBox->addItem("Saddleback College (temp)");
-
-    // connect sqlite database to project
-    campusDB = QSqlDatabase::addDatabase("QSQLITE");
-    campusDB.setDatabaseName("PLACEHOLDER"); // TODO path to sqlite database
-    if(!campusDB.open())
-    {
-        qDebug() << "\nError Opening Database\n";
+     // populate campuses combo box
+    for(auto &i : database->getCampusNames()) {
+        ui->collegeSelectBox->addItem(i);
+        qDebug() << "added " << i;
     }
 
 }
@@ -32,25 +25,26 @@ databaseViewForm::databaseViewForm(QWidget *parent) :
 databaseViewForm::~databaseViewForm()
 {
     delete ui;
+    delete database;
 }
 
 void databaseViewForm::on_displayDistButton_clicked()
 {
-    // first clear the table
-    ui->distTableWidget->clearContents();
+    if(ui->collegeSelectBox->currentText() == "") {
+        QMessageBox::warning(this, "Error", "Please select a campus.");
+    }else{
+        qDebug() << "getting distances from " << ui->collegeSelectBox->currentText();
 
-    // temp
-    ui->distTableWidget->setItem(0, 0, new QTableWidgetItem(QString("Hello")));
-    ui->distTableWidget->setItem(0, 1, new QTableWidgetItem(QString("World")));
+        auto model = database->getDistancesModel(ui->collegeSelectBox->currentText());
 
-    // read from SQLite db here
+        model->setHeaderData(0, Qt::Horizontal, QObject::tr("Starting Campus"));
+        model->setHeaderData(1, Qt::Horizontal, QObject::tr("Ending Campus"));
+        model->setHeaderData(2, Qt::Horizontal, QObject::tr("Distance (mi)"));
 
-    // fetch the number of rows needed to display the data and create the rows
-    // ui->distTableWidget->setRowCount(1);
-
-    // loop over the distances and select the distances from saddleback college and add them to an array/vector
-    // sort the data
-
-    // add to the table
+        ui->campusesTableView->setModel(model);
+        ui->campusesTableView->setColumnWidth(0,310);
+        ui->campusesTableView->setColumnWidth(1,310);
+        ui->campusesTableView->setColumnWidth(2,125);
+    }
 
 }

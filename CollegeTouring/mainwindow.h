@@ -18,7 +18,7 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_pushButton_clicked();
+    void on_actionOpen_Campus_Database_triggered();
 
 private:
     Ui::MainWindow *ui;

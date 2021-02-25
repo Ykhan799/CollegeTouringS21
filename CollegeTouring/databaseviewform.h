@@ -4,6 +4,8 @@
 #include <QDialog>
 #include <QDebug>
 #include <QSqlDatabase>
+#include <QMessageBox>
+#include "dbmanager.h"
 
 namespace Ui {
 class databaseViewForm;
@@ -18,12 +20,16 @@ public:
     ~databaseViewForm();
 
 private slots:
+    //!
+    //! \brief on_displayDistButton_clicked
+    //! populates the table with distances when the button is clicked
+    //!
     void on_displayDistButton_clicked();
 
 private:
     Ui::databaseViewForm *ui;
 
-    QSqlDatabase campusDB;
+    DbManager* database;
 };
 
 #endif // DATABASEVIEWFORM_H

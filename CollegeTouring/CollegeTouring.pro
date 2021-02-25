@@ -10,11 +10,13 @@ CONFIG += c++11
 
 SOURCES += \
     databaseviewform.cpp \
+    dbmanager.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     databaseviewform.h \
+    dbmanager.h \
     mainwindow.h
 
 FORMS += \

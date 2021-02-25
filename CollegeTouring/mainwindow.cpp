@@ -14,8 +14,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
-void MainWindow::on_pushButton_clicked()
+void MainWindow::on_actionOpen_Campus_Database_triggered()
 {
     dbView = new databaseViewForm();
     dbView->exec();

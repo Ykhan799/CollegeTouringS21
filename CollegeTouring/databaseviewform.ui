@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>720</width>
+    <width>802</width>
     <height>535</height>
    </rect>
   </property>
@@ -16,7 +16,7 @@
   <widget class="QDialogButtonBox" name="closeButtonBox">
    <property name="geometry">
     <rect>
-     <x>350</x>
+     <x>370</x>
      <y>470</y>
      <width>341</width>
      <height>32</height>
@@ -57,12 +57,12 @@
     </item>
    </layout>
   </widget>
-  <widget class="QTableView" name="tableView">
+  <widget class="QTableView" name="campusesTableView">
    <property name="geometry">
     <rect>
-     <x>50</x>
+     <x>10</x>
      <y>30</y>
-     <width>621</width>
+     <width>781</width>
      <height>421</height>
     </rect>
    </property>
