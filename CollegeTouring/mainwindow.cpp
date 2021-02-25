@@ -7,12 +7,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     dbView = nullptr;
-<<<<<<< HEAD
-=======
-      
-    ui->addCampusesButton->setVisible(false); // add campus button only visible to admin
+    //ui->addCampusesButton->setVisible(false); // add campus button only visible to admin
     isAdmin = false; // initialize admin check to false
->>>>>>> parent of 344f19d (Revert "Merge pull request #15 from gomihiko/distancedb")
 }
 
 MainWindow::~MainWindow()
@@ -20,18 +16,8 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_actionOpen_Campus_Database_triggered()
-<<<<<<< HEAD
-=======
-{
-    dbView = new databaseViewForm();
-    dbView->exec();
-    delete dbView;
-    dbView = nullptr;
-}
-
 /*************************************************************************
- * void on_loginButton_clicked()
+ * void on_login_triggered()
  * -----------------------------------------------------------------------
  * This function checks if an input password is valid when the log in
  * button is pressed. If the password is valid, administrator privileges
@@ -46,12 +32,25 @@ void MainWindow::on_actionOpen_Campus_Database_triggered()
  * AYEN
  * admin
  ************************************************************************/
+void MainWindow::on_actionLog_In_triggered()
+{
+    lDialog = new loginDialog();
+    lDialog->setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint & ~Qt::WindowMinMaxButtonsHint);
+    lDialog->exec();
+    isAdmin = lDialog->loggedIn();
+    delete lDialog;
+}
 
-void MainWindow::on_loginButton_clicked()
->>>>>>> parent of 344f19d (Revert "Merge pull request #15 from gomihiko/distancedb")
+void MainWindow::on_actionOpen_Database_triggered()
 {
     dbView = new databaseViewForm();
     dbView->exec();
     delete dbView;
     dbView = nullptr;
+}
+
+void MainWindow::on_actionLog_Out_triggered()
+{
+    isAdmin = false;
+    QMessageBox::information(this, "Log Out", "You are now logged out.");
 }

@@ -18,7 +18,7 @@ vector<QString> DbManager::getCampusNames() {
     // query database for campus names
     QSqlQuery query("SELECT START FROM CAMPUSES");
 
-    // add campus names to vector (unique)
+     // add campus names to vector (unique)
     while(query.next()) {
         QString out = query.value(0).toString();
         if(!(std::find(names.begin(), names.end(), out) != names.end())) {

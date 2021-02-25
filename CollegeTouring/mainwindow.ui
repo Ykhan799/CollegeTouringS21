@@ -21,33 +21,32 @@
      <y>0</y>
      <width>800</width>
      <height>25</height>
-<<<<<<< HEAD
-=======
     </rect>
    </property>
    <widget class="QMenu" name="menuDatabase">
     <property name="title">
      <string>Database</string>
     </property>
-    <addaction name="actionOpen_Campus_Database"/>
-   </widget>
-   <addaction name="menuDatabase"/>
-     <height>21</height>
->>>>>>> parent of 344f19d (Revert "Merge pull request #15 from gomihiko/distancedb")
-    </rect>
-   </property>
-   <widget class="QMenu" name="menuDatabase">
-    <property name="title">
-     <string>Database</string>
-    </property>
-    <addaction name="actionOpen_Campus_Database"/>
+    <addaction name="actionOpen_Database"/>
+    <addaction name="actionLog_In"/>
+    <addaction name="actionLog_Out"/>
    </widget>
    <addaction name="menuDatabase"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="actionOpen_Campus_Database">
+  <action name="actionOpen_Database">
    <property name="text">
-    <string>Open Campus Database</string>
+    <string>Open Database</string>
+   </property>
+  </action>
+  <action name="actionLog_In">
+   <property name="text">
+    <string>Log In</string>
+   </property>
+  </action>
+  <action name="actionLog_Out">
+   <property name="text">
+    <string>Log Out</string>
    </property>
   </action>
  </widget>

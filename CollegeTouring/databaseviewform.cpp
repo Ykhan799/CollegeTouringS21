@@ -14,10 +14,10 @@ databaseViewForm::databaseViewForm(QWidget *parent) :
 
     ui->setupUi(this);
 
+    temp = database->getCampusNames();
      // populate campuses combo box
-    for(auto &i : database->getCampusNames()) {
-        ui->collegeSelectBox->addItem(i);
-        qDebug() << "added " << i;
+    for(int i = 0; i < temp.size(); i++) {
+        ui->collegeSelectBox->addItem(temp[i]);
     }
 
 }

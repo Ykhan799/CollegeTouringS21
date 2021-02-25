@@ -2,10 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QMessageBox>
 
 #include <databaseviewform.h>
-
-#include <databaseviewform.h>
+#include <logindialog.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -20,15 +20,18 @@ public:
     ~MainWindow();
 
 private slots:
-<<<<<<< HEAD
-    void on_actionOpen_Campus_Database_triggered();
-=======
+    void on_actionOpen_Database_triggered();
 
-    void on_loginButton_clicked();
->>>>>>> parent of 344f19d (Revert "Merge pull request #15 from gomihiko/distancedb")
+    void on_actionLog_In_triggered();
+
+    void on_actionLog_Out_triggered();
 
 private:
     Ui::MainWindow *ui;
     databaseViewForm* dbView;
+    loginDialog* lDialog;
+
+    bool isAdmin;
+
 };
 #endif // MAINWINDOW_H
