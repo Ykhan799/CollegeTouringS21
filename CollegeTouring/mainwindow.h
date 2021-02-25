@@ -2,7 +2,6 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QMessageBox>
 
 #include <databaseviewform.h>
 
@@ -19,11 +18,10 @@ public:
     ~MainWindow();
 
 private slots:
-
-    void on_loginButton_clicked();
+    void on_actionOpen_Campus_Database_triggered();
 
 private:
     Ui::MainWindow *ui;
-    bool isAdmin;       // keeps track of whether the user is logged in as an admin
+    databaseViewForm* dbView;
 };
 #endif // MAINWINDOW_H
