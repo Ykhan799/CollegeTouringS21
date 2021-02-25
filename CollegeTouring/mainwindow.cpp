@@ -8,6 +8,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     dbView = nullptr;
     //ui->addCampusesButton->setVisible(false); // add campus button only visible to admin
+
     isAdmin = false; // initialize admin check to false
 }
 

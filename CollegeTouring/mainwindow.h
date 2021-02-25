@@ -7,6 +7,7 @@
 #include <databaseviewform.h>
 #include <logindialog.h>
 
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -32,6 +33,5 @@ private:
     loginDialog* lDialog;
 
     bool isAdmin;
-
 };
 #endif // MAINWINDOW_H
