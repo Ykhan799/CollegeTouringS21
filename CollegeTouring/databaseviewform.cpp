@@ -17,6 +17,15 @@ databaseViewForm::databaseViewForm(QWidget *parent) :
     // for(...)
     // ui->collegeSelectBox->addItem(...)
 
+    ui->collegeSelectBox->addItem("Saddleback College (temp)");
+
+    // connect sqlite database to project
+    campusDB = QSqlDatabase::addDatabase("QSQLITE");
+    campusDB.setDatabaseName("PLACEHOLDER"); // TODO path to sqlite database
+    if(!campusDB.open())
+    {
+        qDebug() << "\nError Opening Database\n";
+    }
 
 }
 

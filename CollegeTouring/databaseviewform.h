@@ -2,6 +2,8 @@
 #define DATABASEVIEWFORM_H
 
 #include <QDialog>
+#include <QDebug>
+#include <QSqlDatabase>
 
 namespace Ui {
 class databaseViewForm;
@@ -20,6 +22,8 @@ private slots:
 
 private:
     Ui::databaseViewForm *ui;
+
+    QSqlDatabase campusDB;
 };
 
 #endif // DATABASEVIEWFORM_H
