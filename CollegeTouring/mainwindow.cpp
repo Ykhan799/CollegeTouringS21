@@ -6,8 +6,8 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
-    ui->addCampusesButton->setVisible(false); // add campus button only visible to admin
+    dbView = nullptr;
+    //ui->addCampusesButton->setVisible(false); // add campus button only visible to admin
 
     isAdmin = false; // initialize admin check to false
 }
@@ -18,7 +18,7 @@ MainWindow::~MainWindow()
 }
 
 /*************************************************************************
- * void on_loginButton_clicked()
+ * void on_login_triggered()
  * -----------------------------------------------------------------------
  * This function checks if an input password is valid when the log in
  * button is pressed. If the password is valid, administrator privileges
@@ -33,47 +33,25 @@ MainWindow::~MainWindow()
  * AYEN
  * admin
  ************************************************************************/
-
-void MainWindow::on_loginButton_clicked()
+void MainWindow::on_actionLog_In_triggered()
 {
-    QString password; // IN   - the user entered password string
+    lDialog = new loginDialog();
+    lDialog->setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint & ~Qt::WindowMinMaxButtonsHint);
+    lDialog->exec();
+    isAdmin = lDialog->loggedIn();
+    delete lDialog;
+}
 
-    // if the user is already an administrator, clicking the button will reverse it
-    if (!isAdmin)
-    {
-        // retrieve the password from the text box and empty its contents
-        password = ui->passwordEntry->text();
-        ui->passwordEntry->setText("");
+void MainWindow::on_actionOpen_Database_triggered()
+{
+    dbView = new databaseViewForm();
+    dbView->exec();
+    delete dbView;
+    dbView = nullptr;
+}
 
-        // checking if the password is correct
-        if (password == "AYEN" || password == "admin")
-        {
-            isAdmin = true;
-            ui->loginButton->setText("Logout");
-            ui->passwordEntry->setEnabled(false);
-
-            // enable administrator functionality in the window
-            ui->addCampusesButton->setVisible(true);
-        }
-
-        else
-        {
-            QMessageBox incorrectPassword;
-            incorrectPassword.setWindowTitle("Incorrect password!");
-            incorrectPassword.setText("The entered password is incorrect! Please try again with a valid password.");
-            incorrectPassword.exec();
-        }
-    }
-
-    else
-    {
-        isAdmin = false;
-
-        ui->loginButton->setText("Log in as admin");
-        ui->passwordEntry->setEnabled(true);
-
-        // disable administrator functionality in the window
-        ui->addCampusesButton->setVisible(false);
-    }
-
+void MainWindow::on_actionLog_Out_triggered()
+{
+    isAdmin = false;
+    QMessageBox::information(this, "Log Out", "You are now logged out.");
 }

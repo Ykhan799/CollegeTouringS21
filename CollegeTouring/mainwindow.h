@@ -4,6 +4,10 @@
 #include <QMainWindow>
 #include <QMessageBox>
 
+#include <databaseviewform.h>
+#include <logindialog.h>
+
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -17,10 +21,17 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_loginButton_clicked();
+    void on_actionOpen_Database_triggered();
+
+    void on_actionLog_In_triggered();
+
+    void on_actionLog_Out_triggered();
 
 private:
     Ui::MainWindow *ui;
-    bool isAdmin;       // keeps track of whether the user is logged in as an admin
+    databaseViewForm* dbView;
+    loginDialog* lDialog;
+
+    bool isAdmin;
 };
 #endif // MAINWINDOW_H
