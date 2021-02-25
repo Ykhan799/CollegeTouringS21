@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <QMessageBox>
 
+#include <databaseviewform.h>
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -17,6 +19,7 @@ public:
     ~MainWindow();
 
 private slots:
+
     void on_loginButton_clicked();
 
 private:
