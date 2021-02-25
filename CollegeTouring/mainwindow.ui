@@ -101,26 +101,11 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>25</height>
-    </rect>
-   </property>
-   <widget class="QMenu" name="menuDatabase">
-    <property name="title">
-     <string>Database</string>
-    </property>
-    <addaction name="actionOpen_Campus_Database"/>
-   </widget>
-   <addaction name="menuDatabase"/>
      <height>21</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="actionOpen_Campus_Database">
-   <property name="text">
-    <string>Open Campus Database</string>
-   </property>
-  </action>
  </widget>
  <resources/>
  <connections/>
