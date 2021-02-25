@@ -3,6 +3,10 @@
 
 #include <QMainWindow>
 
+#include <databaseviewform.h>
+
+#include <databaseviewform.h>
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -16,8 +20,12 @@ public:
     ~MainWindow();
 
 private slots:
+<<<<<<< HEAD
     void on_actionOpen_Campus_Database_triggered();
+=======
+
     void on_loginButton_clicked();
+>>>>>>> parent of 344f19d (Revert "Merge pull request #15 from gomihiko/distancedb")
 
 private:
     Ui::MainWindow *ui;

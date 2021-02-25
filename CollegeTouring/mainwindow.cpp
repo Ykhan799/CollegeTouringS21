@@ -7,9 +7,12 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     dbView = nullptr;
-
+<<<<<<< HEAD
+=======
+      
     ui->addCampusesButton->setVisible(false); // add campus button only visible to admin
     isAdmin = false; // initialize admin check to false
+>>>>>>> parent of 344f19d (Revert "Merge pull request #15 from gomihiko/distancedb")
 }
 
 MainWindow::~MainWindow()
@@ -17,13 +20,15 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
 void MainWindow::on_actionOpen_Campus_Database_triggered()
+<<<<<<< HEAD
+=======
 {
     dbView = new databaseViewForm();
     dbView->exec();
     delete dbView;
     dbView = nullptr;
+}
 
 /*************************************************************************
  * void on_loginButton_clicked()
@@ -43,46 +48,10 @@ void MainWindow::on_actionOpen_Campus_Database_triggered()
  ************************************************************************/
 
 void MainWindow::on_loginButton_clicked()
+>>>>>>> parent of 344f19d (Revert "Merge pull request #15 from gomihiko/distancedb")
 {
-    QString password; // IN   - the user entered password string
-
-    // if the user is already an administrator, clicking the button will reverse it
-    if (!isAdmin)
-    {
-        // retrieve the password from the text box and empty its contents
-        password = ui->passwordEntry->text();
-        ui->passwordEntry->setText("");
-
-        // checking if the password is correct
-        if (password == "AYEN" || password == "admin")
-        {
-            isAdmin = true;
-            ui->loginButton->setText("Logout");
-            ui->passwordEntry->setEnabled(false);
-
-            // enable administrator functionality in the window
-            ui->addCampusesButton->setVisible(true);
-        }
-
-        else
-        {
-            QMessageBox incorrectPassword;
-            incorrectPassword.setWindowTitle("Incorrect password!");
-            incorrectPassword.setText("The entered password is incorrect! Please try again with a valid password.");
-            incorrectPassword.exec();
-        }
-    }
-
-    else
-    {
-        isAdmin = false;
-
-        ui->loginButton->setText("Log in as admin");
-        ui->passwordEntry->setEnabled(true);
-
-        // disable administrator functionality in the window
-        ui->addCampusesButton->setVisible(false);
-    }
-
-
+    dbView = new databaseViewForm();
+    dbView->exec();
+    delete dbView;
+    dbView = nullptr;
 }
