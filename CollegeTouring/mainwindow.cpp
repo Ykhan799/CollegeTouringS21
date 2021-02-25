@@ -6,9 +6,9 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    dbView = nullptr;
 
     ui->addCampusesButton->setVisible(false); // add campus button only visible to admin
+
     isAdmin = false; // initialize admin check to false
 }
 
@@ -16,14 +16,6 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
-
-
-void MainWindow::on_actionOpen_Campus_Database_triggered()
-{
-    dbView = new databaseViewForm();
-    dbView->exec();
-    delete dbView;
-    dbView = nullptr;
 
 /*************************************************************************
  * void on_loginButton_clicked()
@@ -83,6 +75,5 @@ void MainWindow::on_loginButton_clicked()
         // disable administrator functionality in the window
         ui->addCampusesButton->setVisible(false);
     }
-
 
 }
