@@ -33,6 +33,8 @@ public:
     //! \return model containing campus names and distances
     //!
     QSqlQueryModel* getDistancesModel(const QString& campus);
+
+    QSqlQueryModel* getSouvenirsModel(const QString& campus);
 private:
     //!
     //! \brief m_db

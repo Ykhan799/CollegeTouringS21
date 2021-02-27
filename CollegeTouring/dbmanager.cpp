@@ -44,3 +44,21 @@ QSqlQueryModel* DbManager::getDistancesModel(const QString& campus) {
 
     return model;
 }
+
+QSqlQueryModel* DbManager::getSouvenirsModel(const QString& campus) {
+    QSqlQueryModel* model = new QSqlQueryModel;
+    QSqlQuery query;
+
+    qDebug() << campus;
+
+    query.prepare("SELECT CAMPUS, SOUVENIR, PRICE FROM SOUVENIRS WHERE CAMPUS = :CAMPUS");
+    query.bindValue(":CAMPUS", campus);
+
+    qDebug() << query.lastQuery();
+
+    query.exec();
+
+    model->setQuery(query);
+
+    return model;
+}

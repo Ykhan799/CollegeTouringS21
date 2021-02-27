@@ -26,6 +26,8 @@ private slots:
     //!
     void on_displayDistButton_clicked();
 
+    void on_displaySouvButton_clicked();
+
 private:
     Ui::databaseViewForm *ui;
 

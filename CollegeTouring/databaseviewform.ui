@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>802</width>
-    <height>535</height>
+    <height>591</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,8 +16,8 @@
   <widget class="QDialogButtonBox" name="closeButtonBox">
    <property name="geometry">
     <rect>
-     <x>370</x>
-     <y>470</y>
+     <x>440</x>
+     <y>540</y>
      <width>341</width>
      <height>32</height>
     </rect>
@@ -29,44 +29,107 @@
     <set>QDialogButtonBox::Close</set>
    </property>
   </widget>
-  <widget class="QWidget" name="horizontalLayoutWidget_3">
+  <widget class="QTabWidget" name="tabWidget">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>470</y>
-     <width>361</width>
-     <height>35</height>
+     <x>0</x>
+     <y>0</y>
+     <width>791</width>
+     <height>521</height>
     </rect>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_3">
-    <item>
-     <widget class="QComboBox" name="collegeSelectBox"/>
-    </item>
-    <item>
-     <widget class="QPushButton" name="displayDistButton">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="text">
-       <string>Display Distances</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QTableView" name="campusesTableView">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>30</y>
-     <width>781</width>
-     <height>421</height>
-    </rect>
+   <property name="currentIndex">
+    <number>0</number>
    </property>
+   <widget class="QWidget" name="campusTab">
+    <attribute name="title">
+     <string>Campuses</string>
+    </attribute>
+    <widget class="QTableView" name="campusesTableView">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>10</y>
+       <width>781</width>
+       <height>421</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QWidget" name="horizontalLayoutWidget_3">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>440</y>
+       <width>361</width>
+       <height>35</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QComboBox" name="collegeSelectBox"/>
+      </item>
+      <item>
+       <widget class="QPushButton" name="displayDistButton">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Display Distances</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="souvenirTab">
+    <attribute name="title">
+     <string>Souvenirs</string>
+    </attribute>
+    <widget class="QTableView" name="souvenirTableView">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>781</width>
+       <height>421</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QWidget" name="horizontalLayoutWidget_4">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>440</y>
+       <width>361</width>
+       <height>35</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <widget class="QComboBox" name="collegeSelectBoxSouv"/>
+      </item>
+      <item>
+       <widget class="QPushButton" name="displaySouvButton">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Display Souvenirs</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
   </widget>
+  <zorder>tabWidget</zorder>
+  <zorder>closeButtonBox</zorder>
  </widget>
  <resources/>
  <connections>
