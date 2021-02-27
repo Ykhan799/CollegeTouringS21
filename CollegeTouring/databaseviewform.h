@@ -26,6 +26,9 @@ private slots:
     //!
     void on_displayDistButton_clicked();
 
+    //!
+    //! \brief on_displaySouvButton_clicked
+    //! populates the table with souvenirs when the button is clicked
     void on_displaySouvButton_clicked();
 
 private:

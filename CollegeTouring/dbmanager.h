@@ -34,6 +34,11 @@ public:
     //!
     QSqlQueryModel* getDistancesModel(const QString& campus);
 
+    //!
+    //! \brief getSouvenirsModel
+    //! \param campus name of campus to return souvenirs from
+    //! \return model containing campus names, souvenirs, and prices
+    //!
     QSqlQueryModel* getSouvenirsModel(const QString& campus);
 private:
     //!
