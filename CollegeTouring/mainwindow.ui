@@ -27,6 +27,7 @@
     <property name="title">
      <string>Database</string>
     </property>
+    <addaction name="separator"/>
     <addaction name="actionOpen_Database"/>
     <addaction name="actionLog_In"/>
     <addaction name="actionLog_Out"/>
@@ -36,7 +37,10 @@
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionOpen_Database">
    <property name="text">
-    <string>Open Database</string>
+    <string>View Database</string>
+   </property>
+   <property name="toolTip">
+    <string>View Database</string>
    </property>
   </action>
   <action name="actionLog_In">
