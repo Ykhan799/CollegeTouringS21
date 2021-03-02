@@ -27,6 +27,26 @@ vector<QString> DbManager::getCampusNames() {
     return names;
 }
 
+vector<QString> DbManager::getSouvenirNamesByCampus(const QString &campus)
+{
+    vector<QString> souvenirs;
+    QSqlQuery query;
+
+    // query database for souvenirs by campus
+    query.prepare("SELECT SOUVENIR FROM SOUVENIRS WHERE CAMPUS = :CAMPUS");
+    query.bindValue(":CAMPUS", campus);
+
+    query.exec();
+
+     // add souvenir names to vector
+    while(query.next()) {
+        QString out = query.value(0).toString();
+        souvenirs.push_back(out);
+    }
+
+    return souvenirs;
+}
+
 QSqlQueryModel* DbManager::getDistancesModel(const QString& campus) {
     QSqlQueryModel* model = new QSqlQueryModel;
     QSqlQuery query;
@@ -60,3 +80,4 @@ QSqlQueryModel* DbManager::getSouvenirsModel(const QString& campus) {
 
     return model;
 }
+

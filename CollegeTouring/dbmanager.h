@@ -28,6 +28,13 @@ public:
     vector<QString> getCampusNames();
 
     //!
+    //! \brief getSouvenirNamesByCampus
+    //! \param campus campus name to get souvenirs from
+    //! \return vector containng souvenir names
+    //!
+    vector<QString> getSouvenirNamesByCampus(const QString& campus);
+
+    //!
     //! \brief getDistancesModel
     //! \param campus name of campus to get distances to
     //! \return model containing campus names and distances

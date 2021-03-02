@@ -13,18 +13,21 @@ SOURCES += \
     dbmanager.cpp \
     logindialog.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    modifysouvenirs.cpp
 
 HEADERS += \
     databaseviewform.h \
     dbmanager.h \
     logindialog.h \
-    mainwindow.h
+    mainwindow.h \
+    modifysouvenirs.h
 
 FORMS += \
     databaseviewform.ui \
     logindialog.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    modifysouvenirs.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

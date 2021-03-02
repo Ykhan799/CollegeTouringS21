@@ -19,9 +19,9 @@ databaseViewForm::databaseViewForm(QWidget *parent) :
 
     temp = database->getCampusNames();
      // populate campuses combo box
-    for(int i = 0; i < temp.size(); i++) {
-        ui->collegeSelectBox->addItem(temp[i]);
-        ui->collegeSelectBoxSouv->addItem(temp[i]);
+    for(auto &i : database->getCampusNames()) {
+        ui->collegeSelectBox->addItem(i);
+        ui->collegeSelectBoxSouv->addItem(i);
     }
 
 }
@@ -71,4 +71,23 @@ void databaseViewForm::on_displaySouvButton_clicked()
         ui->souvenirTableView->setColumnWidth(1,310);
         ui->souvenirTableView->setColumnWidth(2,125);
     }
+}
+
+void databaseViewForm::on_pushButton_clicked()
+{
+    modDialog = new modifySouvenirs(nullptr, database);
+    modDialog->exec();
+    delete modDialog;
+
+    // update database model
+    auto model = database->getSouvenirsModel(ui->collegeSelectBoxSouv->currentText());
+
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("Campus"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("Souvenir"));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("Price (USD)"));
+
+    ui->souvenirTableView->setModel(model);
+    ui->souvenirTableView->setColumnWidth(0,310);
+    ui->souvenirTableView->setColumnWidth(1,310);
+    ui->souvenirTableView->setColumnWidth(2,125);
 }

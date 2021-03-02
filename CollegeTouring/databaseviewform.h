@@ -6,6 +6,7 @@
 #include <QSqlDatabase>
 #include <QMessageBox>
 #include "dbmanager.h"
+#include "modifysouvenirs.h"
 
 namespace Ui {
 class databaseViewForm;
@@ -31,10 +32,13 @@ private slots:
     //! populates the table with souvenirs when the button is clicked
     void on_displaySouvButton_clicked();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::databaseViewForm *ui;
 
     DbManager* database;
+    modifySouvenirs* modDialog;
 };
 
 #endif // DATABASEVIEWFORM_H
