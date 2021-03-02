@@ -42,16 +42,16 @@ void MainWindow::on_actionLog_In_triggered()
     delete lDialog;
 }
 
-void MainWindow::on_actionOpen_Database_triggered()
+void MainWindow::on_actionLog_Out_triggered()
+{
+    isAdmin = false;
+    QMessageBox::information(this, "Log Out", "You are now logged out.");
+}
+
+void MainWindow::on_actionView_Database_triggered()
 {
     dbView = new databaseViewForm();
     dbView->exec();
     delete dbView;
     dbView = nullptr;
-}
-
-void MainWindow::on_actionLog_Out_triggered()
-{
-    isAdmin = false;
-    QMessageBox::information(this, "Log Out", "You are now logged out.");
 }

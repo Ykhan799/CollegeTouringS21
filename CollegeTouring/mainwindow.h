@@ -21,11 +21,11 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_actionOpen_Database_triggered();
-
     void on_actionLog_In_triggered();
 
     void on_actionLog_Out_triggered();
+
+    void on_actionView_Database_triggered();
 
 private:
     Ui::MainWindow *ui;
