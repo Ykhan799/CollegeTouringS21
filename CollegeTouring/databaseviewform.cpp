@@ -10,7 +10,10 @@ databaseViewForm::databaseViewForm(QWidget *parent) :
     const QString FILE_NAME = "collegetouring.db";
     QString dbPath = qApp->applicationDirPath();
     dbPath.append('/' + FILE_NAME);
+
+    // open database with file path
     database = new DbManager(dbPath);
+    qDebug() << "Database should be located at: " << dbPath;
 
     ui->setupUi(this);
 
