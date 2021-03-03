@@ -47,6 +47,8 @@ public:
     //! \return model containing campus names, souvenirs, and prices
     //!
     QSqlQueryModel* getSouvenirsModel(const QString& campus);
+
+    double getSouvenirPrice(const QString& souvenir, const QString& campus);
 private:
     //!
     //! \brief m_db

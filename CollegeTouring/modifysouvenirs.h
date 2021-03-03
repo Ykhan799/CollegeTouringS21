@@ -19,6 +19,13 @@ public:
     explicit modifySouvenirs(QWidget *parent = nullptr, DbManager* database = nullptr);
     ~modifySouvenirs();
 
+private slots:
+    void on_pushButton_clicked();
+
+    void on_campusSouvenirComboBox_currentIndexChanged(const QString &arg1);
+
+    void on_souvenirNameComboBox_currentIndexChanged(const QString &arg1);
+
 private:
     Ui::modifySouvenirs *ui;
 

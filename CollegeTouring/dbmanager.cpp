@@ -51,7 +51,7 @@ QSqlQueryModel* DbManager::getDistancesModel(const QString& campus) {
     QSqlQueryModel* model = new QSqlQueryModel;
     QSqlQuery query;
 
-    qDebug() << campus;
+    //qDebug() << campus;
 
     query.prepare("SELECT START, STOP, DIST FROM CAMPUSES WHERE START = :CAMPUS");
     query.bindValue(":CAMPUS", campus);
@@ -67,17 +67,38 @@ QSqlQueryModel* DbManager::getSouvenirsModel(const QString& campus) {
     QSqlQueryModel* model = new QSqlQueryModel;
     QSqlQuery query;
 
-    qDebug() << campus;
+    //qDebug() << campus;
 
     query.prepare("SELECT CAMPUS, SOUVENIR, PRICE FROM SOUVENIRS WHERE CAMPUS = :CAMPUS");
     query.bindValue(":CAMPUS", campus);
 
-    qDebug() << query.lastQuery();
+    //qDebug() << query.lastQuery();
 
     query.exec();
 
     model->setQuery(query);
 
     return model;
+}
+
+double DbManager::getSouvenirPrice(const QString &souvenir, const QString &campus)
+{
+    QSqlQuery query;
+
+    query.prepare("SELECT PRICE FROM SOUVENIRS WHERE SOUVENIR = :SOUVENIR AND CAMPUS = :CAMPUS");
+    query.bindValue(":SOUVENIR", souvenir);
+    query.bindValue(":CAMPUS", campus);
+
+    query.exec();
+
+    if(!query.next()) {
+        qDebug() << "No Result.";
+    }
+
+    QString out = query.value(0).toString();
+    //qDebug() << "souvenir price: " << out;
+
+    return query.value(0).toDouble();
+
 }
 
