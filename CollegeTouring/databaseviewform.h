@@ -5,6 +5,7 @@
 #include <QDebug>
 #include <QSqlDatabase>
 #include <QMessageBox>
+#include <QPixmap>
 #include "dbmanager.h"
 #include "modifysouvenirs.h"
 
@@ -17,7 +18,7 @@ class databaseViewForm : public QDialog
     Q_OBJECT
 
 public:
-    explicit databaseViewForm(QWidget *parent = nullptr);
+    explicit databaseViewForm(QWidget *parent = nullptr, bool adminUser = false);
     ~databaseViewForm();
 
 private slots:
@@ -39,6 +40,8 @@ private:
 
     DbManager* database;
     modifySouvenirs* modDialog;
+
+    bool isAdmin;
 };
 
 #endif // DATABASEVIEWFORM_H

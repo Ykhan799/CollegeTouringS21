@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/bonk_emoji.png</file>
+    </qresource>
+</RCC>

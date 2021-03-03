@@ -50,7 +50,7 @@ void modifySouvenirs::on_pushButton_clicked()
     newSouvValue = ui->priceSpinBox->value();
     campus = ui->campusSouvenirComboBox->currentText();
 
-     qDebug() << "new: " << newSouvName << ' ' << newSouvValue << " old: " << oldSouvName << " campus: " << campus;
+    // qDebug() << "new: " << newSouvName << ' ' << newSouvValue << " old: " << oldSouvName << " campus: " << campus;
 
     databaseInternal->updateSouvenir(campus, oldSouvName, newSouvName, newSouvValue);
 

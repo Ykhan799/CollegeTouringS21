@@ -114,7 +114,7 @@ void DbManager::updateSouvenir(const QString& campus, const QString& oldName, co
     query.bindValue(":CAMPUS", campus);
     query.bindValue(":OLDNAME", oldName);
 
-    qDebug() << "bound: " << query.boundValues();
+    // qDebug() << "bound: " << query.boundValues();
 
     success = query.exec();
 
