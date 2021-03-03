@@ -72,3 +72,14 @@ void databaseViewForm::on_displaySouvButton_clicked()
         ui->souvenirTableView->setColumnWidth(2,125);
     }
 }
+
+/*std::vector<QString> databaseViewForm::getActiveTableRow()
+{
+
+}*/
+
+void databaseViewForm::on_showCartButton_clicked()
+{
+   cart = new shoppingcart(this);
+   cart->show();
+}

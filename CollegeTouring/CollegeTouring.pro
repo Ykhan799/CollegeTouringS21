@@ -13,18 +13,21 @@ SOURCES += \
     dbmanager.cpp \
     logindialog.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    shoppingcart.cpp
 
 HEADERS += \
     databaseviewform.h \
     dbmanager.h \
     logindialog.h \
-    mainwindow.h
+    mainwindow.h \
+    shoppingcart.h
 
 FORMS += \
     databaseviewform.ui \
     logindialog.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    shoppingcart.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
