@@ -132,7 +132,7 @@ void DbManager::removeSouvenir(const QString &campus, const QString &souvenirNam
     query.bindValue(":CAMPUS", campus);
     query.bindValue(":SOUVENIRNAME", souvenirName);
 
-    qDebug() << "bound: " << query.boundValues();
+    // qDebug() << "bound: " << query.boundValues();
 
     success = query.exec();
 
