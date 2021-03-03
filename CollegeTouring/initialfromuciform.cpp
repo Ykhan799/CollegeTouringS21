@@ -10,7 +10,7 @@ initialFromUciForm::initialFromUciForm(QWidget *parent) :
     currentCampus.name = "University of California, Irvine (UCI)";
     currentCampus.number = 0;
     campusCount = 10;
-    widgetCounter = 0;
+    viewCounter = 0;
 
     const QString FILE_NAME = "collegetouring.db";
     QString dbPath = qApp->applicationDirPath();
@@ -76,23 +76,9 @@ void initialFromUciForm::on_beginTripButton_clicked()
         totalDistance += currentCampus.number;
     }
 
-    for (int i = 0; i < route.size(); i++)
-     qDebug() << route[i].name;
+    // begin viewing starting college in route
 
-    // prepare the next displayed widget
-
-    ui->welcomeLabel->setText("Route Summary");
-
-    ui->currentLabel->setText("Starting campus: ");
-    ui->currentVarLabel->setText(route[0].name);
-
-    ui->previousLabel->setText("Ending campus: ");
-    ui->previousVarLabel->setText(route[campusCount].name);
-
-    ui->distanceLabel->setText("Total distance: ");
-    ui->distanceVarLabel->setText(QString::number(totalDistance));
-
-    ui->imageLabel->setText("Listed below is the information for the entire trip. Click \"Next Campus\" to begin viewing each campus in the route individually in the order they were visited.");
+    on_nextButton_clicked();
 
     ui->initialFromUciStacked->setCurrentIndex(1);
 
@@ -105,5 +91,58 @@ void initialFromUciForm::on_exitButton_clicked()
 
 void initialFromUciForm::on_nextButton_clicked()
 {
+    // moves to next campus in the route while available
+    if (viewCounter <= campusCount)
+    {
+
+        ui->welcomeLabel->setText(route[viewCounter].name);
+
+        ui->nextLabel->setText("Next campus: ");
+        if (viewCounter < campusCount)
+        {
+            ui->nextVarLabel->setText(route[viewCounter + 1].name);
+        }
+        else
+        {
+            ui->nextVarLabel->setText("N/A");
+        }
+
+        ui->previousLabel->setText("Previous campus: ");
+        if (viewCounter > 0)
+        {
+           ui->previousVarLabel->setText(route[viewCounter - 1].name);
+        }
+        else
+        {
+            ui->previousVarLabel->setText("N/A");
+        }
+
+        ui->distanceLabel->setText("Distance from previous campus: ");
+        ui->distanceVarLabel->setText(QString::number(route[viewCounter].number));
+
+        viewCounter++;
+        if (viewCounter > campusCount)
+        {
+            ui->nextButton->setText("Finish Trip");
+        }
+    }
+    // when all campuses have been seen, change window to summary page
+    else
+    {
+        ui->nextButton->setVisible(false);
+        ui->souvenirsButton->setVisible(false);
+        ui->exitButton->setText("Exit");
+        ui->welcomeLabel->setText("Route Summary");
+
+        ui->nextLabel->setText("Starting campus: ");
+        ui->nextVarLabel->setText(route[0].name);
+
+        ui->previousLabel->setText("Ending campus: ");
+        ui->previousVarLabel->setText(route[campusCount].name);
+
+        ui->distanceLabel->setText("Total distance: ");
+        ui->distanceVarLabel->setText(QString::number(totalDistance));
+
+    }
 
 }

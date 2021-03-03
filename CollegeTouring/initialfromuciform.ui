@@ -119,9 +119,9 @@
     <widget class="QLabel" name="welcomeLabel">
      <property name="geometry">
       <rect>
-       <x>20</x>
+       <x>10</x>
        <y>10</y>
-       <width>351</width>
+       <width>380</width>
        <height>31</height>
       </rect>
      </property>
@@ -253,7 +253,7 @@
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QLabel" name="currentVarLabel">
+    <widget class="QLabel" name="nextVarLabel">
      <property name="geometry">
       <rect>
        <x>130</x>
@@ -277,7 +277,7 @@
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QLabel" name="currentLabel">
+    <widget class="QLabel" name="nextLabel">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -292,7 +292,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Current campus:</string>
+      <string>Next campus:</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>

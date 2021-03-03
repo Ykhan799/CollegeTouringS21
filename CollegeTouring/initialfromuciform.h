@@ -36,7 +36,7 @@ private:
     vector<nameNumber>::iterator campusIterator; // iterator for vector
     double totalDistance;                        // the total distance traveled during the route
     int campusCount;                             // the number of campuses being visited
-    int widgetCounter;                           // used to track what is currently being displayed
+    int viewCounter;                             // used to track what is currently being displayed
 };
 
 #endif // INITIALFROMUCIFORM_H
