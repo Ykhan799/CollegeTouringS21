@@ -91,14 +91,15 @@ double DbManager::getSouvenirPrice(const QString &souvenir, const QString &campu
 
     query.exec();
 
-    if(!query.next()) {
+    if(query.next()) {
+
+        QString out = query.value(0).toString();
+        //qDebug() << "souvenir price: " << out;
+
+        return query.value(0).toDouble();
+    }else {
         qDebug() << "No Result.";
+        return -1;
     }
-
-    QString out = query.value(0).toString();
-    //qDebug() << "souvenir price: " << out;
-
-    return query.value(0).toDouble();
-
 }
 

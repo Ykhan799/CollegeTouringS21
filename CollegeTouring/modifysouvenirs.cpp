@@ -45,16 +45,21 @@ void modifySouvenirs::on_pushButton_clicked()
 
 void modifySouvenirs::on_campusSouvenirComboBox_currentIndexChanged(const QString &arg1)
 {
+    qDebug() << "on_campusSouvenirComboBox_currentIndexChanged";
     ui->souvenirNameComboBox->clear();
     // populate souvenirs once on window init
     //qDebug() << ui->campusSouvenirComboBox->currentText();
-    for(auto &i: databaseInternal->getSouvenirNamesByCampus(ui->campusSouvenirComboBox->currentText())) {
+
+    auto temp = databaseInternal->getSouvenirNamesByCampus(ui->campusSouvenirComboBox->currentText());
+
+    for(auto &i: temp) {
         ui->souvenirNameComboBox->addItem(i);
     }
 }
 
 void modifySouvenirs::on_souvenirNameComboBox_currentIndexChanged(const QString &arg1)
 {
+    qDebug() << "on_souvenirNameComboBox_currentIndexChanged";
     ui->nameLineEdit->setText(arg1);
     ui->priceSpinBox->setValue(databaseInternal->getSouvenirPrice(ui->souvenirNameComboBox->currentText(), ui->campusSouvenirComboBox->currentText()));
 }
