@@ -4,6 +4,7 @@
 #include <QSqlDatabase>
 #include <QSqlQueryModel>
 #include <QSqlQuery>
+#include <QSqlError>
 #include <QDebug>
 #include <QTableView>
 
@@ -49,6 +50,8 @@ public:
     QSqlQueryModel* getSouvenirsModel(const QString& campus);
 
     double getSouvenirPrice(const QString& souvenir, const QString& campus);
+
+    void updateSouvenir(const QString& campus, const QString& oldName, const QString &newName, const double &newPrice);
 private:
     //!
     //! \brief m_db

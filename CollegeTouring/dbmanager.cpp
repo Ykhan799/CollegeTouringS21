@@ -103,3 +103,23 @@ double DbManager::getSouvenirPrice(const QString &souvenir, const QString &campu
     }
 }
 
+void DbManager::updateSouvenir(const QString& campus, const QString& oldName, const QString &newName, const double &newPrice)
+{
+    QSqlQuery query;
+    bool success;
+
+    query.prepare("UPDATE SOUVENIRS SET PRICE = :NEWPRICE, SOUVENIR = :NEWNAME WHERE CAMPUS = :CAMPUS AND SOUVENIR = :OLDNAME");
+    query.bindValue(":NEWPRICE", newPrice);
+    query.bindValue(":NEWNAME", newName);
+    query.bindValue(":CAMPUS", campus);
+    query.bindValue(":OLDNAME", oldName);
+
+    qDebug() << "bound: " << query.boundValues();
+
+    success = query.exec();
+
+    if(!success) {
+        qDebug() << "updateSouvenir error: " << query.lastError();
+    }
+}
+
