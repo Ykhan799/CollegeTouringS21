@@ -6,6 +6,7 @@
 
 #include <databaseviewform.h>
 #include <logindialog.h>
+#include <initialfromuciform.h>
 
 
 QT_BEGIN_NAMESPACE
@@ -27,10 +28,14 @@ private slots:
 
     void on_actionView_Database_triggered();
 
+    void on_actionVisit_local_colleges_UCI_triggered();
+
 private:
     Ui::MainWindow *ui;
     databaseViewForm* dbView;
     loginDialog* lDialog;
+    initialFromUciForm* initialFromUci;
+
 
     bool isAdmin;
 };

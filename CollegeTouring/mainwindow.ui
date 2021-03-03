@@ -20,7 +20,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>25</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuDatabase">
@@ -37,8 +37,15 @@
     </property>
     <addaction name="actionView_Database"/>
    </widget>
+   <widget class="QMenu" name="menuPlan_Trip">
+    <property name="title">
+     <string>Plan Trip</string>
+    </property>
+    <addaction name="actionVisit_local_colleges_UCI"/>
+   </widget>
    <addaction name="menuDatabase"/>
    <addaction name="menuDatabase_2"/>
+   <addaction name="menuPlan_Trip"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionLog_In">
@@ -54,6 +61,11 @@
   <action name="actionView_Database">
    <property name="text">
     <string>View Database</string>
+   </property>
+  </action>
+  <action name="actionVisit_local_colleges_UCI">
+   <property name="text">
+    <string>Visit initial colleges from UCI</string>
    </property>
   </action>
  </widget>

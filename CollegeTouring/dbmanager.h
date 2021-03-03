@@ -10,6 +10,8 @@
 #include <vector>
 #include <algorithm>
 
+#include <structcontainer.h>
+
 using namespace std;
 
 class DbManager
@@ -26,6 +28,13 @@ public:
     //! \return QString vector of unique campus names
     //!
     vector<QString> getCampusNames();
+
+    //!
+    //! \brief getDistances returns the distance from campus to all other campusese in the database
+    //! \param campus is the name of the campus to get distances from
+    //! \return vector of objects holding the name of the campus and the distance from the passed campus
+    //!
+    vector<nameNumber> getDistances(const QString& campus);
 
     //!
     //! \brief getDistancesModel
