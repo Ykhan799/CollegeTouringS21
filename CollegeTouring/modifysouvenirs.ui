@@ -33,17 +33,17 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>10</y>
+     <y>0</y>
      <width>541</width>
      <height>331</height>
     </rect>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
-   <widget class="QWidget" name="modTab">
+   <widget class="QWidget" name="modDelTab">
     <attribute name="title">
-     <string>Modify Souvenir</string>
+     <string>Modify/Delete</string>
     </attribute>
     <widget class="QWidget" name="formLayoutWidget">
      <property name="geometry">
@@ -51,7 +51,7 @@
        <x>80</x>
        <y>10</y>
        <width>371</width>
-       <height>61</height>
+       <height>64</height>
       </rect>
      </property>
      <layout class="QFormLayout" name="formLayout">
@@ -142,29 +142,137 @@
       </item>
      </layout>
     </widget>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QWidget" name="horizontalLayoutWidget">
      <property name="geometry">
       <rect>
-       <x>370</x>
-       <y>210</y>
+       <x>240</x>
+       <y>209</y>
+       <width>211</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QPushButton" name="deleteButton">
+        <property name="text">
+         <string>Delete</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="modifyButton">
+        <property name="text">
+         <string>Modify</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="addTab">
+    <attribute name="title">
+     <string>Add</string>
+    </attribute>
+    <widget class="QWidget" name="formLayoutWidget_3">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>10</y>
+       <width>371</width>
+       <height>64</height>
+      </rect>
+     </property>
+     <layout class="QFormLayout" name="formLayout_3">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_5">
+        <property name="text">
+         <string>Campus</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QComboBox" name="addCampusComboBox"/>
+      </item>
+      <item row="1" column="1">
+       <spacer name="verticalSpacer_3">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="formLayoutWidget_4">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>90</y>
+       <width>371</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <layout class="QFormLayout" name="formLayout_4">
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="addNameLineEdit"/>
+      </item>
+      <item row="1" column="1">
+       <spacer name="verticalSpacer_4">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_8">
+        <property name="text">
+         <string>Souvenir Price</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QDoubleSpinBox" name="addPriceLineEdit">
+        <property name="prefix">
+         <string>$</string>
+        </property>
+        <property name="maximum">
+         <double>999.990000000000009</double>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_7">
+        <property name="text">
+         <string>Souvenir Name</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QPushButton" name="addButton">
+     <property name="geometry">
+      <rect>
+       <x>380</x>
+       <y>230</y>
        <width>80</width>
        <height>25</height>
       </rect>
      </property>
      <property name="text">
-      <string>Modify</string>
+      <string>Add</string>
      </property>
     </widget>
-   </widget>
-   <widget class="QWidget" name="addTab">
-    <attribute name="title">
-     <string>Add Souvenir</string>
-    </attribute>
-   </widget>
-   <widget class="QWidget" name="deleteTab">
-    <attribute name="title">
-     <string>Delete Souvenir</string>
-    </attribute>
    </widget>
   </widget>
  </widget>

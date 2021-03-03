@@ -20,11 +20,13 @@ public:
     ~modifySouvenirs();
 
 private slots:
-    void on_pushButton_clicked();
+    void on_modifyButton_clicked();
 
     void on_campusSouvenirComboBox_currentIndexChanged(const QString &arg1);
 
     void on_souvenirNameComboBox_currentIndexChanged(const QString &arg1);
+
+    void on_deleteButton_clicked();
 
 private:
     Ui::modifySouvenirs *ui;

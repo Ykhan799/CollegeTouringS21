@@ -105,6 +105,7 @@ void databaseViewForm::on_pushButton_clicked()
         error.setInformativeText("Only administrators may modify the database.");
         error.setStandardButtons(QMessageBox::Ok);
         error.setIconPixmap(icon);
+        error.setWindowTitle("BONK!");
         error.exec();
     }
 }

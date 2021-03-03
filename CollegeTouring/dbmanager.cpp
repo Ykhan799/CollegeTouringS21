@@ -123,3 +123,21 @@ void DbManager::updateSouvenir(const QString& campus, const QString& oldName, co
     }
 }
 
+void DbManager::removeSouvenir(const QString &campus, const QString &souvenirName)
+{
+    QSqlQuery query;
+    bool success;
+
+    query.prepare("DELETE FROM SOUVENIRS WHERE CAMPUS = :CAMPUS AND SOUVENIR = :SOUVENIRNAME");
+    query.bindValue(":CAMPUS", campus);
+    query.bindValue(":SOUVENIRNAME", souvenirName);
+
+    qDebug() << "bound: " << query.boundValues();
+
+    success = query.exec();
+
+    if(!success) {
+        qDebug() << "removeSouvenir error: " << query.lastError();
+    }
+}
+

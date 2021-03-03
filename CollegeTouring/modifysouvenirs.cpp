@@ -38,7 +38,7 @@ modifySouvenirs::~modifySouvenirs()
     databaseInternal = nullptr; // this is database review form's dbmanager, don't delete
 }
 
-void modifySouvenirs::on_pushButton_clicked()
+void modifySouvenirs::on_modifyButton_clicked()
 {
     QString newSouvName;
     QString oldSouvName;
@@ -55,11 +55,9 @@ void modifySouvenirs::on_pushButton_clicked()
     databaseInternal->updateSouvenir(campus, oldSouvName, newSouvName, newSouvValue);
 
     // update souvenir names
-    // populate souvenirs once on window init
-    //qDebug() << ui->campusSouvenirComboBox->currentText();
     ui->souvenirNameComboBox->clear();
     for(auto &i: databaseInternal->getSouvenirNamesByCampus(ui->campusSouvenirComboBox->currentText())) {
-        qDebug() << "added " << i;
+        // qDebug() << "added " << i;
         ui->souvenirNameComboBox->addItem(i);
     }
 
@@ -87,4 +85,23 @@ void modifySouvenirs::on_souvenirNameComboBox_currentIndexChanged(const QString 
     // qDebug() << "on_souvenirNameComboBox_currentIndexChanged";
     ui->nameLineEdit->setText(arg1);
     ui->priceSpinBox->setValue(databaseInternal->getSouvenirPrice(ui->souvenirNameComboBox->currentText(), ui->campusSouvenirComboBox->currentText()));
+}
+
+void modifySouvenirs::on_deleteButton_clicked()
+{
+    QString removeSouv;
+    QString removeCampus;
+
+    removeSouv = ui->souvenirNameComboBox->currentText();
+    removeCampus = ui->campusSouvenirComboBox->currentText();
+
+    // remove souvenir
+    databaseInternal->removeSouvenir(removeCampus, removeSouv);
+
+    // update souvenir names
+    ui->souvenirNameComboBox->clear();
+    for(auto &i: databaseInternal->getSouvenirNamesByCampus(ui->campusSouvenirComboBox->currentText())) {
+        // qDebug() << "added " << i;
+        ui->souvenirNameComboBox->addItem(i);
+    }
 }
