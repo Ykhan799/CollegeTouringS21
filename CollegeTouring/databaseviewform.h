@@ -7,6 +7,9 @@
 #include <QMessageBox>
 #include "dbmanager.h"
 #include "shoppingcart.h"
+#include "addcampuses.h"
+#include "logindialog.h"
+#include "ui_logindialog.h"
 #include <vector>
 namespace Ui {
 class databaseViewForm;
@@ -41,6 +44,10 @@ private:
     DbManager* database;
 
     shoppingcart *cart;
+    
+    addcampuses* addcampus;
+    
+    loginDialog* login;
 
 };
 
