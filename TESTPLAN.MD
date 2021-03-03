@@ -92,12 +92,12 @@ specification. For example:
 ## Environment
 
 - Hardware
-    o Desktops or laptop computers
+    - Desktops or laptop computers
 - Software
-    o Microsoft Windows
-    o MinGW
-    o Qt Creator
-    o SQLite tool such as sqlite3 cli or SQLiteStudio
+    - Microsoft Windows
+    - MinGW
+    - Qt Creator
+    - SQLite tool such as sqlite3 cli or SQLiteStudio
 
 ## Configuration Management
 
@@ -118,11 +118,11 @@ specification. For example:
 ## Glossary
 
 1. Unit Testing
-    a. A testing method that is used to test a certain method or class. Usually occurs during
+    - A testing method that is used to test a certain method or class. Usually occurs during
        and/or after the development process.
-    b. Each developer must perform unit testing during the development process of each user
+    - Each developer must perform unit testing during the development process of each user
        story.
 2. Black Box Testing
-    a. A testing method that is used to test the program without considering any internal
+    - A testing method that is used to test the program without considering any internal
        structures or code.
-    b. All developers will perform black box testing prior to a sprint review.
+    - All developers will perform black box testing prior to a sprint review.
