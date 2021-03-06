@@ -54,6 +54,8 @@ public:
     void updateSouvenir(const QString& campus, const QString& oldName, const QString &newName, const double &newPrice);
 
     void removeSouvenir(const QString& campus, const QString& souvenirName);
+
+    void addSouvenir(const QString& campus, const QString& souvenirName, const double& price);
 private:
     //!
     //! \brief m_db

@@ -27,6 +27,11 @@ databaseViewForm::databaseViewForm(QWidget *parent, bool adminUser) :
     // get admin status from main window
     isAdmin = adminUser;
 
+    // populate the souvenir and campus distance models once on init
+    // reusing code from the buttons for simplicity
+    on_displayDistButton_clicked();
+    on_displaySouvButton_clicked();
+
 }
 
 databaseViewForm::~databaseViewForm()
@@ -106,6 +111,7 @@ void databaseViewForm::on_pushButton_clicked()
         error.setStandardButtons(QMessageBox::Ok);
         error.setIconPixmap(icon);
         error.setWindowTitle("BONK!");
+        QApplication::beep();
         error.exec();
     }
 }

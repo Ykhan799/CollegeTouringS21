@@ -141,3 +141,36 @@ void DbManager::removeSouvenir(const QString &campus, const QString &souvenirNam
     }
 }
 
+void DbManager::addSouvenir(const QString &campus, const QString &souvenirName, const double &price)
+{
+    QSqlQuery query;
+    int maxID;
+    bool success;
+
+    query.prepare("SELECT max(ID) from SOUVENIRS"); // get the maximum id from the table
+    query.exec();
+
+    // get the highest id from the bottom row of the table
+    if(query.next()) {
+        maxID =  query.value(0).toInt();
+        maxID++;
+        qDebug() << maxID;
+
+        query.prepare("INSERT INTO SOUVENIRS VALUES(:ID, :CAMPUS, :SOUVENIRNAME, :SOUVENIRPRICE)");
+        query.bindValue(":ID", maxID); // id is the id of the bottom row + 1
+        query.bindValue(":CAMPUS", campus);
+        query.bindValue(":SOUVENIRNAME", souvenirName);
+        query.bindValue(":SOUVENIRPRICE", price);
+
+        success = query.exec();
+
+        if(!success) {
+            qDebug() << "addSouvenir error: " << query.lastError();
+        }
+
+    } else {
+        qDebug() << "Error: addSouvenir did not get an ID value from the table.";
+    }
+
+}
+

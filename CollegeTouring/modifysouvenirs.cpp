@@ -19,10 +19,13 @@ modifySouvenirs::modifySouvenirs(QWidget *parent, DbManager* database) :
         qDebug() << "Database should be located at: " << dbPath;
     }
 
-     // populate campuses combo box
+     // populate campuses combo boxes
     for(auto &i : databaseInternal->getCampusNames()) {
         ui->campusSouvenirComboBox->addItem(i);
+        ui->addCampusComboBox->addItem(i);
     }
+
+
 
     // populate souvenirs once on window init
     //qDebug() << ui->campusSouvenirComboBox->currentText();
@@ -103,5 +106,21 @@ void modifySouvenirs::on_deleteButton_clicked()
     for(auto &i: databaseInternal->getSouvenirNamesByCampus(ui->campusSouvenirComboBox->currentText())) {
         // qDebug() << "added " << i;
         ui->souvenirNameComboBox->addItem(i);
+    }
+}
+
+void modifySouvenirs::on_addButton_clicked()
+{
+    QString campus = ui->addCampusComboBox->currentText();
+    QString souvenirName = ui->addNameLineEdit->text();
+    double price = ui->addPriceSpinBox->value();
+
+    // check if input fields are empty here
+    if(souvenirName.isEmpty()) {
+        QMessageBox::information(this, "Error", "Please input the new souvenir's information.");
+    }else if(price == 0.0){
+        QMessageBox::information(this, "Error", "The new souvenir's price cannot be $0.00.");
+    }else {
+         databaseInternal->addSouvenir(campus, souvenirName, price);
     }
 }
