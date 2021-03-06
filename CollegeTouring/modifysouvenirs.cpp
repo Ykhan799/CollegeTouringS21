@@ -115,8 +115,10 @@ void modifySouvenirs::on_addButton_clicked()
     QString souvenirName = ui->addNameLineEdit->text();
     double price = ui->addPriceSpinBox->value();
 
-    // check if input fields are empty here
-    if(souvenirName.isEmpty()) {
+    // check input for errors
+    if(databaseInternal->souvExists(campus, souvenirName)) {
+        QMessageBox::information(this, "Error", "Souvenir already exists.");
+    }else if(souvenirName.isEmpty()) {
         QMessageBox::information(this, "Error", "Please input the new souvenir's information.");
     }else if(price == 0.0){
         QMessageBox::information(this, "Error", "The new souvenir's price cannot be $0.00.");

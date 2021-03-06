@@ -174,3 +174,27 @@ void DbManager::addSouvenir(const QString &campus, const QString &souvenirName, 
 
 }
 
+bool DbManager::souvExists(QString &campus, QString &souvenirName)
+{
+    QSqlQuery query;
+    bool success;
+    bool found;
+
+    query.prepare("SELECT EXISTS(SELECT 1 FROM SOUVENIRS WHERE CAMPUS=:CAMPUS AND SOUVENIR=:SOUVENIRNAME)");
+    query.bindValue(":CAMPUS", campus);
+    query.bindValue(":SOUVENIRNAME", souvenirName);
+
+    success = query.exec();
+
+    if(!success) {
+          qDebug() << "souvExists error: " << query.lastError();
+          return false;
+    }
+
+    found = query.first();
+
+    //qDebug() << "found: " << found;
+
+    return found;
+}
+

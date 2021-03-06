@@ -33,6 +33,9 @@ private slots:
     //! populates the table with souvenirs when the button is clicked
     void on_displaySouvButton_clicked();
 
+    //!
+    //! \brief on_pushButton_clicked
+    //! opens the modify database menu ONLY if user is an administrator.
     void on_pushButton_clicked();
 
 private:
