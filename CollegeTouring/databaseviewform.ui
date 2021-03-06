@@ -39,7 +39,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="campusTab">
     <attribute name="title">
@@ -125,6 +125,32 @@
        </widget>
       </item>
      </layout>
+    </widget>
+    <widget class="QPushButton" name="showCartButton">
+     <property name="geometry">
+      <rect>
+       <x>690</x>
+       <y>450</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Show Cart</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="addCartButton">
+     <property name="geometry">
+      <rect>
+       <x>580</x>
+       <y>450</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Add to Cart</string>
+     </property>
     </widget>
    </widget>
   </widget>

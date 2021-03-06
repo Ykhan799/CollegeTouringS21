@@ -15,6 +15,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     modifysouvenirs.cpp
+    shoppingcart.cpp
 
 HEADERS += \
     databaseviewform.h \
@@ -22,12 +23,14 @@ HEADERS += \
     logindialog.h \
     mainwindow.h \
     modifysouvenirs.h
+    shoppingcart.h
 
 FORMS += \
     databaseviewform.ui \
     logindialog.ui \
     mainwindow.ui \
     modifysouvenirs.ui
+    shoppingcart.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

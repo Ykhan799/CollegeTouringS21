@@ -6,8 +6,10 @@
 #include <QSqlDatabase>
 #include <QMessageBox>
 #include <QPixmap>
+#include <vector>
 #include "dbmanager.h"
 #include "modifysouvenirs.h"
+#include "shoppingcart.h"
 
 namespace Ui {
 class databaseViewForm;
@@ -20,6 +22,7 @@ class databaseViewForm : public QDialog
 public:
     explicit databaseViewForm(QWidget *parent = nullptr, bool adminUser = false);
     ~databaseViewForm();
+    std::vector<QString> getActiveTableRow();
 
 private slots:
     //!
@@ -37,6 +40,9 @@ private slots:
     //! \brief on_pushButton_clicked
     //! opens the modify database menu ONLY if user is an administrator.
     void on_pushButton_clicked();
+    
+    // TODO needs documentation
+    void on_showCartButton_clicked();
 
 private:
     Ui::databaseViewForm *ui;
@@ -45,6 +51,9 @@ private:
     modifySouvenirs* modDialog;
 
     bool isAdmin;
+
+    shoppingcart *cart;
+
 };
 
 #endif // DATABASEVIEWFORM_H

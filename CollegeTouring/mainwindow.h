@@ -3,7 +3,6 @@
 
 #include <QMainWindow>
 #include <QMessageBox>
-
 #include <databaseviewform.h>
 #include <logindialog.h>
 
@@ -31,7 +30,6 @@ private:
     Ui::MainWindow *ui;
     databaseViewForm* dbView;
     loginDialog* lDialog;
-
     bool isAdmin;
 };
 #endif // MAINWINDOW_H

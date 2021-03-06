@@ -80,7 +80,6 @@ void databaseViewForm::on_displaySouvButton_clicked()
         ui->souvenirTableView->setColumnWidth(2,125);
     }
 }
-
 void databaseViewForm::on_pushButton_clicked()
 {
     // only admins can modify the database
@@ -114,4 +113,14 @@ void databaseViewForm::on_pushButton_clicked()
         QApplication::beep();
         error.exec();
     }
+
+/*std::vector<QString> databaseViewForm::getActiveTableRow()
+{
+
+}*/
+
+void databaseViewForm::on_showCartButton_clicked()
+{
+   cart = new shoppingcart(this);
+   cart->show();
 }
