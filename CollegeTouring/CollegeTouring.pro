@@ -14,7 +14,7 @@ SOURCES += \
     logindialog.cpp \
     main.cpp \
     mainwindow.cpp \
-    modifysouvenirs.cpp
+    modifysouvenirs.cpp \
     shoppingcart.cpp
 
 HEADERS += \
@@ -22,14 +22,14 @@ HEADERS += \
     dbmanager.h \
     logindialog.h \
     mainwindow.h \
-    modifysouvenirs.h
+    modifysouvenirs.h \
     shoppingcart.h
 
 FORMS += \
     databaseviewform.ui \
     logindialog.ui \
     mainwindow.ui \
-    modifysouvenirs.ui
+    modifysouvenirs.ui \
     shoppingcart.ui
 
 # Default rules for deployment.

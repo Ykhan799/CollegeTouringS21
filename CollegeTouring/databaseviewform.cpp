@@ -113,14 +113,14 @@ void databaseViewForm::on_pushButton_clicked()
         QApplication::beep();
         error.exec();
     }
+}
 
 /*std::vector<QString> databaseViewForm::getActiveTableRow()
 {
 
 }*/
 
-void databaseViewForm::on_showCartButton_clicked()
-{
+void databaseViewForm::on_showCartButton_clicked() {
    cart = new shoppingcart(this);
    cart->show();
 }
