@@ -50,7 +50,7 @@ void MainWindow::on_actionLog_Out_triggered()
 
 void MainWindow::on_actionView_Database_triggered()
 {
-    dbView = new databaseViewForm();
+    dbView = new databaseViewForm(nullptr, isAdmin);
     dbView->exec();
     delete dbView;
     dbView = nullptr;

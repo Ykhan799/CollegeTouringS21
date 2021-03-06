@@ -1,7 +1,7 @@
 #include "databaseviewform.h"
 #include "ui_databaseviewform.h"
 
-databaseViewForm::databaseViewForm(QWidget *parent) :
+databaseViewForm::databaseViewForm(QWidget *parent, bool adminUser) :
     QDialog(parent),
     ui(new Ui::databaseViewForm)
 {
@@ -19,10 +19,18 @@ databaseViewForm::databaseViewForm(QWidget *parent) :
 
     temp = database->getCampusNames();
      // populate campuses combo box
-    for(int i = 0; i < temp.size(); i++) {
-        ui->collegeSelectBox->addItem(temp[i]);
-        ui->collegeSelectBoxSouv->addItem(temp[i]);
+    for(auto &i : database->getCampusNames()) {
+        ui->collegeSelectBox->addItem(i);
+        ui->collegeSelectBoxSouv->addItem(i);
     }
+
+    // get admin status from main window
+    isAdmin = adminUser;
+
+    // populate the souvenir and campus distance models once on init
+    // reusing code from the buttons for simplicity
+    on_displayDistButton_clicked();
+    on_displaySouvButton_clicked();
 
 }
 
@@ -72,14 +80,47 @@ void databaseViewForm::on_displaySouvButton_clicked()
         ui->souvenirTableView->setColumnWidth(2,125);
     }
 }
+void databaseViewForm::on_pushButton_clicked()
+{
+    // only admins can modify the database
+    if(isAdmin) {
+        modDialog = new modifySouvenirs(nullptr, database);
+        modDialog->exec();
+        delete modDialog;
+
+        // update database model
+        auto model = database->getSouvenirsModel(ui->collegeSelectBoxSouv->currentText());
+
+        model->setHeaderData(0, Qt::Horizontal, QObject::tr("Campus"));
+        model->setHeaderData(1, Qt::Horizontal, QObject::tr("Souvenir"));
+        model->setHeaderData(2, Qt::Horizontal, QObject::tr("Price (USD)"));
+
+        ui->souvenirTableView->setModel(model);
+        ui->souvenirTableView->setColumnWidth(0,310);
+        ui->souvenirTableView->setColumnWidth(1,310);
+        ui->souvenirTableView->setColumnWidth(2,125);
+    } else {
+        QMessageBox error;
+        QPixmap icon;
+        icon.load(":/images/bonk_emoji.png");
+        icon = icon.scaled(100,100);
+
+        error.setText("Error!");
+        error.setInformativeText("Only administrators may modify the database.");
+        error.setStandardButtons(QMessageBox::Ok);
+        error.setIconPixmap(icon);
+        error.setWindowTitle("BONK!");
+        QApplication::beep();
+        error.exec();
+    }
+}
 
 /*std::vector<QString> databaseViewForm::getActiveTableRow()
 {
 
 }*/
 
-void databaseViewForm::on_showCartButton_clicked()
-{
+void databaseViewForm::on_showCartButton_clicked() {
    cart = new shoppingcart(this);
    cart->show();
 }

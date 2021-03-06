@@ -21,7 +21,7 @@ void loginDialog::on_logInButton_clicked()
     QString usernameInput = ui->usernameField->text();
     QString passwordInput = ui->passwordField->text();
 
-    if(usernameInput == "Admin" && (passwordInput == "password" || passwordInput == "AYEN")) {
+    if((usernameInput == "Admin" || usernameInput == "admin" ) && (passwordInput == "password" || passwordInput == "AYEN")) {
         QMessageBox::information(this, "Success", "Logged in as Administrator.");
         isLoggedIn = true;
         this->close();

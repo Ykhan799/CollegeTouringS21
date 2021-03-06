@@ -14,6 +14,7 @@ SOURCES += \
     logindialog.cpp \
     main.cpp \
     mainwindow.cpp \
+    modifysouvenirs.cpp \
     shoppingcart.cpp
 
 HEADERS += \
@@ -21,15 +22,20 @@ HEADERS += \
     dbmanager.h \
     logindialog.h \
     mainwindow.h \
+    modifysouvenirs.h \
     shoppingcart.h
 
 FORMS += \
     databaseviewform.ui \
     logindialog.ui \
     mainwindow.ui \
+    modifysouvenirs.ui \
     shoppingcart.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    images.qrc
