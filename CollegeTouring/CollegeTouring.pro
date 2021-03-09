@@ -11,6 +11,7 @@ CONFIG += c++11
 SOURCES += \
     databaseviewform.cpp \
     dbmanager.cpp \
+    initialfromuciform.cpp \
     logindialog.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -20,6 +21,7 @@ SOURCES += \
 HEADERS += \
     databaseviewform.h \
     dbmanager.h \
+    initialfromuciform.h \
     logindialog.h \
     mainwindow.h \
     modifysouvenirs.h \
@@ -27,6 +29,7 @@ HEADERS += \
 
 FORMS += \
     databaseviewform.ui \
+    initialfromuciform.ui \
     logindialog.ui \
     mainwindow.ui \
     modifysouvenirs.ui \

@@ -27,6 +27,29 @@ vector<QString> DbManager::getCampusNames() {
     return names;
 }
 
+double DbManager::getDistance(const QString& currentCampus, const QString& nextCampus)
+{
+    QSqlQuery query;     // query
+
+    double distance = 0; // distance between the two campuses
+
+    // find the cell whose starting campus is currentCampus and whose ending campus is nextCampus
+    query.prepare("SELECT DIST FROM CAMPUSES WHERE START = :CURRENTCAMPUS AND STOP = :NEXTCAMPUS");
+    query.bindValue(":CURRENTCAMPUS", currentCampus);
+    query.bindValue(":NEXTCAMPUS", nextCampus);
+
+    // execute prepared query
+    query.exec();
+
+    // assign value to distance
+    if (query.next())
+    {
+        distance = query.value(0).toDouble();
+    }
+
+    return distance;     // return distance
+}
+
 vector<QString> DbManager::getSouvenirNamesByCampus(const QString &campus)
 {
     vector<QString> souvenirs;

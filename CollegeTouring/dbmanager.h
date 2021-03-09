@@ -29,6 +29,13 @@ public:
     vector<QString> getCampusNames();
 
     //!
+    //! \brief getDistance returns the distance between currentCampus and nextCampus
+    //! \param currentCampus is the name of the originating campus
+    //! \param nextCampus is the name of the campus to be traveled to
+    //! \return a double value holding the distance from currentCampus to nextCampus
+    //!
+    double getDistance(const QString& currentCampus, const QString& nextCampus);
+  
     //! \brief getSouvenirNamesByCampus
     //! \param campus campus name to get souvenirs from
     //! \return vector containng souvenir names
