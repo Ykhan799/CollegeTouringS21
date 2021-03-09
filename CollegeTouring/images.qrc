@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/bonk_emoji.png</file>
+        <file>images/saddleback_logo.png</file>
+        <file>images/uci_logo.png</file>
+        <file>images/saddleback_quad_bg.png</file>
+        <file>images/white.png</file>
+        <file>images/asu_logo.png</file>
+        <file>images/logo program.png</file>
+        <file>images/plan a trip.png</file>
+    </qresource>
+</RCC>

@@ -39,7 +39,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="campusTab">
     <attribute name="title">
@@ -126,10 +126,56 @@
       </item>
      </layout>
     </widget>
+    <widget class="QPushButton" name="showCartButton">
+     <property name="geometry">
+      <rect>
+       <x>690</x>
+       <y>450</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Show Cart</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="addCartButton">
+     <property name="geometry">
+      <rect>
+       <x>580</x>
+       <y>450</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Add to Cart</string>
+     </property>
+    </widget>
    </widget>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>530</y>
+     <width>141</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QPushButton" name="pushButton">
+      <property name="text">
+       <string>Modify Souvenirs</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
   <zorder>tabWidget</zorder>
   <zorder>closeButtonBox</zorder>
+  <zorder>horizontalLayoutWidget</zorder>
  </widget>
  <resources/>
  <connections>

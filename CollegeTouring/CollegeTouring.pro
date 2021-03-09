@@ -14,24 +14,31 @@ SOURCES += \
     initialfromuciform.cpp \
     logindialog.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    modifysouvenirs.cpp \
+    shoppingcart.cpp
 
 HEADERS += \
     databaseviewform.h \
     dbmanager.h \
     initialfromuciform.h \
     logindialog.h \
-    mainwindow.h
+    mainwindow.h \
+    modifysouvenirs.h \
+    shoppingcart.h
 
 FORMS += \
     databaseviewform.ui \
     initialfromuciform.ui \
     logindialog.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    modifysouvenirs.ui \
+    shoppingcart.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-RESOURCES +=
+RESOURCES += \
+    images.qrc

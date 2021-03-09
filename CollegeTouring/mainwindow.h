@@ -3,7 +3,6 @@
 
 #include <QMainWindow>
 #include <QMessageBox>
-
 #include <databaseviewform.h>
 #include <logindialog.h>
 #include <initialfromuciform.h>

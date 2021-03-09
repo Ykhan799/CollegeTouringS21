@@ -11,9 +11,147 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>College Tour Planner</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>100</y>
+      <width>160</width>
+      <height>441</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QPushButton" name="asuButton">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>118</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">image: url(:/images/asu_logo.png);
+color: rgb(255, 255, 255);
+background-color: rgb(255, 255, 255);
+background-image: url(:/images/white.png);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="uciButton">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>118</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">image: url(:/images/uci_logo.png);
+background-image: url(:/images/white.png);
+color: rgb(255, 255, 255);
+background-color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="saddlebackButton">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>118</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);
+background-image: url(:/images/white.png);
+color: rgb(255, 255, 255);
+image: url(:/images/saddleback_logo.png);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="customButton">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>118</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image: url(:/images/white.png);
+color: rgb(0, 0, 0);</string>
+       </property>
+       <property name="text">
+        <string>Custom Trip</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QGraphicsView" name="graphicsView">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>800</width>
+      <height>550</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image: url(:/images/saddleback_quad_bg.png);
+background-image: url(:/images/saddleback_quad_bg.png);</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>100</y>
+      <width>491</width>
+      <height>341</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/images/logo program.png&quot; width=&quot;583&quot; height=&quot;391&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>10</y>
+      <width>211</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:22pt;&quot;&gt;Plan a Trip&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Select a school to start&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <zorder>graphicsView</zorder>
+   <zorder>verticalLayoutWidget</zorder>
+   <zorder>label</zorder>
+   <zorder>label_2</zorder>
+  </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
@@ -22,6 +160,9 @@
      <width>800</width>
      <height>21</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
    </property>
    <widget class="QMenu" name="menuDatabase">
     <property name="title">
@@ -47,7 +188,11 @@
    <addaction name="menuDatabase_2"/>
    <addaction name="menuPlan_Trip"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QStatusBar" name="statusbar">
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
+   </property>
+  </widget>
   <action name="actionLog_In">
    <property name="text">
     <string>Log In</string>
