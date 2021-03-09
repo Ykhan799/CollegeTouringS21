@@ -29,6 +29,8 @@ private slots:
 
     void on_actionVisit_local_colleges_UCI_triggered();
 
+    void on_uciButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     databaseViewForm* dbView;

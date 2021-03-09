@@ -158,7 +158,7 @@ color: rgb(0, 0, 0);</string>
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>21</height>
+     <height>25</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -178,15 +178,8 @@ color: rgb(0, 0, 0);</string>
     </property>
     <addaction name="actionView_Database"/>
    </widget>
-   <widget class="QMenu" name="menuPlan_Trip">
-    <property name="title">
-     <string>Plan Trip</string>
-    </property>
-    <addaction name="actionVisit_local_colleges_UCI"/>
-   </widget>
    <addaction name="menuDatabase"/>
    <addaction name="menuDatabase_2"/>
-   <addaction name="menuPlan_Trip"/>
   </widget>
   <widget class="QStatusBar" name="statusbar">
    <property name="styleSheet">

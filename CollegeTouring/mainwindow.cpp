@@ -78,3 +78,10 @@ void MainWindow::on_actionVisit_local_colleges_UCI_triggered()
     initialFromUci->exec();
     delete initialFromUci;
 }
+
+void MainWindow::on_uciButton_clicked()
+{
+    initialFromUci = new initialFromUciForm();
+    initialFromUci->exec();
+    delete initialFromUci;
+}
