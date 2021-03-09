@@ -196,7 +196,7 @@
       </font>
      </property>
      <property name="text">
-      <string>0</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -244,7 +244,7 @@
       </font>
      </property>
      <property name="text">
-      <string>0</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -268,7 +268,7 @@
       </font>
      </property>
      <property name="text">
-      <string>0</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -292,7 +292,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Next campus:</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -316,7 +316,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Distance from previous campus:</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -340,7 +340,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Previous campus:</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -364,7 +364,7 @@
       </font>
      </property>
      <property name="text">
-      <string>miles</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>

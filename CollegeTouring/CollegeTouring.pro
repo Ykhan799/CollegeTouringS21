@@ -21,8 +21,7 @@ HEADERS += \
     dbmanager.h \
     initialfromuciform.h \
     logindialog.h \
-    mainwindow.h \
-    structcontainer.h
+    mainwindow.h
 
 FORMS += \
     databaseviewform.ui \

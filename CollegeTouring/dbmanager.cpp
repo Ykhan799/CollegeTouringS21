@@ -27,41 +27,28 @@ vector<QString> DbManager::getCampusNames() {
     return names;
 }
 
-vector<nameNumber> DbManager::getDistances(const QString& campus)
+double DbManager::getDistance(const QString& currentCampus, const QString& nextCampus)
 {
-    vector<nameNumber> nearbyCampuses;
-    QSqlQuery query;
-    int count = 0;
+    QSqlQuery query;     // query
 
-    // query database for campus names that hold distances from campus
-    query.prepare("SELECT STOP FROM CAMPUSES WHERE START = :CAMPUS");
-    query.bindValue(":CAMPUS", campus);
+    double distance = 0; // distance between the two campuses
 
+    // find the cell whose starting campus is currentCampus and whose ending campus is nextCampus
+    query.prepare("SELECT DIST FROM CAMPUSES WHERE START = :CURRENTCAMPUS AND STOP = :NEXTCAMPUS");
+    query.bindValue(":CURRENTCAMPUS", currentCampus);
+    query.bindValue(":NEXTCAMPUS", nextCampus);
+
+    // execute prepared query
     query.exec();
 
-    // add nameNumber obj to vector, each holds a name
-    while (query.next())
+    // assign value to distance
+    if (query.next())
     {
-        QString out = query.value(0).toString();
-        nameNumber current;
-        current.name = out;
-        nearbyCampuses.push_back(current);
-    }
-    // query database for distances from campus to each other campus stored in nearbyCampuses
-    query.prepare("SELECT DIST FROM CAMPUSES WHERE START = :CAMPUS");
-    query.bindValue(":CAMPUS", campus);
-
-    query.exec();
-
-    // iterating through vector, add a matching distance to the nameNumber objects
-    while (query.next())
-    {
-        double outNum = query.value(0).toDouble();
-        nearbyCampuses[count].number = outNum;
-        count++;
+        distance = query.value(0).toDouble();
     }
 
-    return nearbyCampuses;
+    return distance;     // return distance
+
 }
 
 QSqlQueryModel* DbManager::getDistancesModel(const QString& campus) {
