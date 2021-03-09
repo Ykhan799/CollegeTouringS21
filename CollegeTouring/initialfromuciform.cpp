@@ -94,7 +94,6 @@ void initialFromUciForm::on_nextButton_clicked()
     // moves to next campus in the route while available
     if (viewCounter <= campusCount)
     {
-
         ui->welcomeLabel->setText(route[viewCounter].name);
 
         ui->nextLabel->setText("Next campus: ");
@@ -140,7 +139,7 @@ void initialFromUciForm::on_nextButton_clicked()
         ui->previousLabel->setText("Ending campus: ");
         ui->previousVarLabel->setText(route[campusCount].name);
 
-        ui->distanceLabel->setText("Total distance: ");
+        ui->distanceLabel->setText("Total distance traveled: ");
         ui->distanceVarLabel->setText(QString::number(totalDistance));
 
     }
