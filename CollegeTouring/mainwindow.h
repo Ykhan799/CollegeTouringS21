@@ -37,7 +37,7 @@ private:
     Ui::MainWindow *ui;
     databaseViewForm* dbView;
     loginDialog* lDialog;
-    tripRoutePlanner* initialFromUci;
+    tripRoutePlanner* tripPlannerWindow;
     DbManager* database;
 
 
