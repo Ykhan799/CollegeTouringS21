@@ -20,7 +20,7 @@ class databaseViewForm : public QDialog
     Q_OBJECT
 
 public:
-    explicit databaseViewForm(QWidget *parent = nullptr, bool adminUser = false);
+    explicit databaseViewForm(QWidget *parent = nullptr, bool adminUser = false, DbManager* databaseManager = nullptr);
     ~databaseViewForm();
     std::vector<QString> getActiveTableRow();
 

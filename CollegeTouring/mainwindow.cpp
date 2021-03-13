@@ -10,11 +10,22 @@ MainWindow::MainWindow(QWidget *parent)
     //ui->addCampusesButton->setVisible(false); // add campus button only visible to admin
 
     isAdmin = false; // initialize admin check to false
+
+    // initialize database manager object
+    const QString FILE_NAME = "collegetouring.db";
+    QString dbPath = qApp->applicationDirPath();
+    dbPath.append('/' + FILE_NAME);
+
+    // open database with file path
+    database = new DbManager(dbPath);
+    qDebug() << "Database should be located at: " << dbPath;
+
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+    delete database;
 }
 
 /*************************************************************************
@@ -71,17 +82,18 @@ void MainWindow::on_actionView_Database_triggered()
  * the user to select their starting point. All initial 11 colleges are
  * visited.
  ************************************************************************/
-
-void MainWindow::on_actionVisit_local_colleges_UCI_triggered()
+void MainWindow::on_uciButton_clicked()
 {
-    initialFromUci = new initialFromUciForm();
+    initialFromUci = new tripRoutePlanner(nullptr, UCI);
     initialFromUci->exec();
     delete initialFromUci;
 }
 
-void MainWindow::on_uciButton_clicked()
+void MainWindow::on_asuButton_clicked()
 {
-    initialFromUci = new initialFromUciForm();
+    // check for all 13 campuses here
+
+    initialFromUci = new tripRoutePlanner(nullptr, ASU);
     initialFromUci->exec();
     delete initialFromUci;
 }

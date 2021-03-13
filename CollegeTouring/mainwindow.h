@@ -3,9 +3,11 @@
 
 #include <QMainWindow>
 #include <QMessageBox>
-#include <databaseviewform.h>
-#include <logindialog.h>
-#include <initialfromuciform.h>
+
+#include "dbmanager.h"
+#include "databaseviewform.h"
+#include "logindialog.h"
+#include "tripRoutePlanner.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -27,15 +29,16 @@ private slots:
 
     void on_actionView_Database_triggered();
 
-    void on_actionVisit_local_colleges_UCI_triggered();
-
     void on_uciButton_clicked();
+
+    void on_asuButton_clicked();
 
 private:
     Ui::MainWindow *ui;
     databaseViewForm* dbView;
     loginDialog* lDialog;
-    initialFromUciForm* initialFromUci;
+    tripRoutePlanner* initialFromUci;
+    DbManager* database;
 
 
     bool isAdmin;

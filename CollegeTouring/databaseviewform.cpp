@@ -1,19 +1,13 @@
 #include "databaseviewform.h"
 #include "ui_databaseviewform.h"
 
-databaseViewForm::databaseViewForm(QWidget *parent, bool adminUser) :
+databaseViewForm::databaseViewForm(QWidget *parent, bool adminUser, DbManager* databaseManager) :
     QDialog(parent),
     ui(new Ui::databaseViewForm)
 {
     vector<QString> temp;
 
-    const QString FILE_NAME = "collegetouring.db";
-    QString dbPath = qApp->applicationDirPath();
-    dbPath.append('/' + FILE_NAME);
-
-    // open database with file path
-    database = new DbManager(dbPath);
-    qDebug() << "Database should be located at: " << dbPath;
+    database = databaseManager;
 
     ui->setupUi(this);
 

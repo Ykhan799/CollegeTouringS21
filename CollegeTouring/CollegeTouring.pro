@@ -11,29 +11,29 @@ CONFIG += c++11
 SOURCES += \
     databaseviewform.cpp \
     dbmanager.cpp \
-    initialfromuciform.cpp \
     logindialog.cpp \
     main.cpp \
     mainwindow.cpp \
     modifysouvenirs.cpp \
-    shoppingcart.cpp
+    shoppingcart.cpp \
+    tripRoutePlanner.cpp
 
 HEADERS += \
     databaseviewform.h \
     dbmanager.h \
-    initialfromuciform.h \
     logindialog.h \
     mainwindow.h \
     modifysouvenirs.h \
-    shoppingcart.h
+    shoppingcart.h \
+    tripRoutePlanner.h
 
 FORMS += \
     databaseviewform.ui \
-    initialfromuciform.ui \
     logindialog.ui \
     mainwindow.ui \
     modifysouvenirs.ui \
-    shoppingcart.ui
+    shoppingcart.ui \
+    tripRoutePlanner.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
