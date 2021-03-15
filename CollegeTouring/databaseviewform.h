@@ -45,7 +45,9 @@ private slots:
     // TODO needs documentation
     void on_showCartButton_clicked();
     
-    //TODO needs documentation
+    //!
+    //! \brief on_addCampus_clicked
+    //! opens the add campus window ONLY if the user is an administrator
     void on_addCampus_clicked();
 
 private:
