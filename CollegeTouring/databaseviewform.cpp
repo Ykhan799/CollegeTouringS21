@@ -73,23 +73,19 @@ void databaseViewForm::on_displaySouvButton_clicked()
     }
 }
 
-/*
-// Not completed yet. User must be an admin to add campuses
-void databaseViewForm::on_addCampuses_clicked()
+void databaseViewForm::on_addCampus_clicked()
 {
-    //login = new loginDialog(this);
-    bool isAdmin = true;
-    if (isAdmin == false)
+    if (isAdmin)
     {
-        QMessageBox::warning(this, "Error", "Only Admin can add campuses.");
+        addcampus = new addcampuses(nullptr);
+        addcampus->exec();
+        delete addcampus;
     }
     else
     {
-        addcampus = new addcampuses(this);
-        addcampus->show();
+        QMessageBox::information(this, QObject::tr("System Message"), tr("Warning. Must be an Admin to add Campus"));
     }
 }
-*/
 
 
 /*std::vector<QString> databaseViewForm::getActiveTableRow()
