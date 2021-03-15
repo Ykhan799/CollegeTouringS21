@@ -1,7 +1,7 @@
 #include "tripRoutePlanner.h"
 #include "ui_tripRoutePlanner.h"
 
-tripRoutePlanner::tripRoutePlanner(QWidget *parent, const TripType& tripType, DbManager* dbManager, int visitNum) :
+tripRoutePlanner::tripRoutePlanner(QWidget *parent, const TripType& tripType, DbManager* dbManager, int visitNum, vector<QString> *visitList) :
     QDialog(parent),
     ui(new Ui::tripRoutePlanner)
 {    
@@ -11,35 +11,44 @@ tripRoutePlanner::tripRoutePlanner(QWidget *parent, const TripType& tripType, Db
     // get database manager from parent class
     database = dbManager;
 
-    // initialize member variables
-    totalDistance = 0;
-    temp = database->getCampusNames();
+    // if a list was not provided, get list from database according to tripType
+    if (visitList == nullptr)
+    {
+        // initialize member variables
+        totalDistance = 0;
+        temp = database->getCampusNames();
 
-    switch(tripType) {
-    case UCI: // if triptype is uci, visit the 13 campuses
-        for(int i = 0; i < visitNum; i++) {
-            campusesToVisit.push_back(temp[i]);
-        }
-        initialCampus = "University of California, Irvine (UCI)";
-        break;
+        switch(tripType) {
+        case UCI: // if triptype is uci, visit the 13 campuses
+            for(int i = 0; i < visitNum; i++) {
+                campusesToVisit.push_back(temp[i]);
+            }
+            initialCampus = "University of California, Irvine (UCI)";
+            break;
 
-    case ASU: // if triptype is asu, visit selected number of campuses in shortest trip
-        for(int i = 0; i < visitNum ; i++) {
-            campusesToVisit.push_back(temp[i]);
-        }
-        initialCampus = "Arizona State University";
-        break;
+        case ASU: // if triptype is asu, visit selected number of campuses in shortest trip
+            for(int i = 0; i < visitNum ; i++) {
+                campusesToVisit.push_back(temp[i]);
+            }
+            initialCampus = "Arizona State University";
+            break;
 
-    case SADDLEBACK: // if tripType is saddleback, visit 11 campuses
-        for(int i = 0; i < visitNum; i++) {
-            campusesToVisit.push_back(temp[i]);
+        case SADDLEBACK: // if tripType is saddleback, visit 11 campuses
+            for(int i = 0; i < visitNum; i++) {
+                campusesToVisit.push_back(temp[i]);
+            }
+            initialCampus = "Saddleback College";
+            break;
+        case CUSTOM: // if triptype is custom, open the custom triptype dialog
+            break;
         }
-        initialCampus = "Saddleback College";
-        break;
-    case CUSTOM: // if triptype is custom, open the custom triptype dialog
-        break;
     }
-
+    else
+    {
+        // list is provided, so plan trip using data held in visitList
+        campusesToVisit = *visitList;
+        initialCampus = campusesToVisit.front();
+    }
     ui->setupUi(this);
 
     // populate the itinerary
