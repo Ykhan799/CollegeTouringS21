@@ -222,8 +222,7 @@ bool DbManager::souvExists(QString &campus, QString &souvenirName)
 }
 
 
-// May or may not need functions
-/*
+
 void addCampus(QString& startCampus, QString& endCampus, double& distance)
 {
     QSqlQuery query;
@@ -256,63 +255,6 @@ void addCampus(QString& startCampus, QString& endCampus, double& distance)
     }
 
 }
-*/
 
-/*
-void DbManager::addCampus(const QString& campus)
-{
-    QSqlQuery query;
-    int maxID;
-    bool success;
-
-    query.prepare("SELECT max(ID) from CAMPUS");
-    query.exec();
-
-    if (query.next())
-    {
-        maxID = query.value(0).toInt();
-        maxID++;
-        qDebug() << maxID;
-
-        query.prepare("INSERT INTO CAMPUS VALUES(:CAMPUS)");
-        query.bindValue(":CAMPUS", campus);
-
-        success = query.exec();
-
-        if (!success)
-        {
-            qDebug() << "addCampus Error: ";
-
-        }
-    }
-    else
-    {
-        qDebug() << "Error: addCampus did not get an ID value from the table";
-    }
-}
-*/
-
-/*
-bool DbManager::campusExists(QString &campus)
-{
-    QSqlQuery query;
-    bool success;
-    bool found;
-
-    query.prepare("SELECT EXISTS(SELECT 1 FROM CAMPUS=:CAMPUS");
-    query.bindValue(":CAMPUS", campus);
-    success = query.exec();
-
-    if (!success)
-    {
-        //qDebug() << "Campus exist error: " << query.lastError();
-        return false;
-    }
-
-    found = query.first();
-
-    return found;
-}
-*/
 
 
