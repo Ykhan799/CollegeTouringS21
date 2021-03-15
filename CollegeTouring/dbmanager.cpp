@@ -221,6 +221,32 @@ bool DbManager::souvExists(QString &campus, QString &souvenirName)
     return found;
 }
 
+bool DbManager::campusExists(QString& campus)
+{
+    QSqlQuery query;
+    bool found;
+    bool success;
+
+    query.prepare("SELECT 1 FROM CAMPUSES WHERE START=:CAMPUS");
+    query.bindValue(":CAMPUS", campus);
+
+    success = query.exec();
+
+    if(!success)
+    {
+        // campus does not exist in database
+        qDebug() << "campusExists error: " << query.lastError();
+        found = false;
+    }
+    else
+    {
+        // campus found in database
+        found = query.first();
+    }
+
+    return found;
+}
+
 vector<QString> DbManager::getInitialCampusNames()
 {
     vector<QString> names;

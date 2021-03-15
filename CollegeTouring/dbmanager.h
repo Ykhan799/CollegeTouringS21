@@ -97,6 +97,13 @@ public:
     //!
     bool souvExists(QString& campus, QString& souvenirName);
 
+    //!
+    //! \brief campusExists
+    //! checks if a campus name exists
+    //! \param campus name of the campus to look for
+    //! \return true if the campus name is found in the database
+    //!
+    bool campusExists(QString& campus);
 
     //!
     //! \brief getInitialCampusNames

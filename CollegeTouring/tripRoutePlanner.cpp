@@ -47,8 +47,25 @@ tripRoutePlanner::tripRoutePlanner(QWidget *parent, const TripType& tripType, Db
     {
         // list is provided, so plan trip using data held in visitList
         campusesToVisit = *visitList;
-        initialCampus = campusesToVisit.front();
+
+        // verify all campuses in visitList exist in the database
+        for (auto it = campusesToVisit.begin(); it != campusesToVisit.end(); it++)
+        {
+            if (!database->campusExists(*it))
+            {
+                // if an invalid campus is found, remove it from the list
+                qDebug() << *it << " does not exist\n";
+                campusesToVisit.erase(it);
+                it--;
+            }
+        }
+
+        if (!campusesToVisit.empty())
+        {
+            initialCampus = campusesToVisit.front();
+        }
     }
+
     ui->setupUi(this);
 
     // populate the itinerary
@@ -58,6 +75,7 @@ tripRoutePlanner::tripRoutePlanner(QWidget *parent, const TripType& tripType, Db
     }
     ui->collegesToVisitLabel->setText(tempItinerary);
     ui->startingCollegeLabel->setText("The following colleges will be visited in the most efficient order,\n starting at: " + initialCampus + '.');
+
 }
 
 tripRoutePlanner::~tripRoutePlanner()
@@ -121,6 +139,10 @@ void tripRoutePlanner::on_cancelTripButton_clicked()
 
 void tripRoutePlanner::on_beginTripButton_clicked()
 {
+    if (campusesToVisit.empty())
+    {
+        close();
+    }
 
     // determine the complete route
     createRoute(initialCampus);
@@ -130,7 +152,6 @@ void tripRoutePlanner::on_beginTripButton_clicked()
     on_nextButton_clicked();
 
     ui->initialFromUciStacked->setCurrentIndex(1);
-
 }
 
 void tripRoutePlanner::on_exitButton_clicked()
@@ -174,7 +195,6 @@ void tripRoutePlanner::on_nextButton_clicked()
         ui->distanceVarLabel->setText(QString::number(totalDistance));
 
         ui->unitsLabel->setText("miles");
-
     }
 
 }
