@@ -98,8 +98,13 @@ public:
     bool souvExists(QString& campus, QString& souvenirName);
 
     
-    // May or may not need. 
-    //void addCampus(QString& startCampus, QString& endCampus, double& distance);
+    //!
+    //! \brief addCampus
+    //! \param startCampus - First campus location
+    //! \param endCampus  - Second campus location
+    //! \param distance   - Distance between startCampus and endCampus
+    //! 
+    void addCampus(QString& startCampus, QString& endCampus, double& distance);
 
 private:
     //!
