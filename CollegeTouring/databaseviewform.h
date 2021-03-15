@@ -37,6 +37,8 @@ private slots:
     void on_displaySouvButton_clicked();
 
     void on_showCartButton_clicked();
+    
+    void on_addCampus_clicked();
 
 private:
     Ui::databaseViewForm *ui;
@@ -47,7 +49,7 @@ private:
     
     addcampuses* addcampus;
     
-    loginDialog* login;
+    bool isAdmin;
 
 };
 
