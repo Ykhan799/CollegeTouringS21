@@ -221,3 +221,98 @@ bool DbManager::souvExists(QString &campus, QString &souvenirName)
     return found;
 }
 
+
+// May or may not need functions
+/*
+void addCampus(QString& startCampus, QString& endCampus, double& distance)
+{
+    QSqlQuery query;
+    int maxID;
+    bool success;
+
+    query.prepare("SELECT max(ID) from CAMPUSES"); // get the maximum id from the table
+    query.exec();
+
+    // get the highest id from the bottom row of the table
+    if(query.next()) {
+        maxID =  query.value(0).toInt();
+        maxID++;
+        qDebug() << maxID;
+
+        query.prepare("INSERT INTO CAMPUSES VALUES(:ID, :START, :STOP, :DIST)");
+        query.bindValue(":ID", maxID); // id is the id of the bottom row + 1
+        query.bindValue(":START", startCampus);
+        query.bindValue(":STOP", endCampus);
+        query.bindValue(":DIST", distance);
+
+        success = query.exec();
+
+        if(!success) {
+            qDebug() << "addCampus error: " << query.lastError();
+        }
+
+    } else {
+        qDebug() << "Error: addCampus did not get an ID value from the table.";
+    }
+
+}
+*/
+
+/*
+void DbManager::addCampus(const QString& campus)
+{
+    QSqlQuery query;
+    int maxID;
+    bool success;
+
+    query.prepare("SELECT max(ID) from CAMPUS");
+    query.exec();
+
+    if (query.next())
+    {
+        maxID = query.value(0).toInt();
+        maxID++;
+        qDebug() << maxID;
+
+        query.prepare("INSERT INTO CAMPUS VALUES(:CAMPUS)");
+        query.bindValue(":CAMPUS", campus);
+
+        success = query.exec();
+
+        if (!success)
+        {
+            qDebug() << "addCampus Error: ";
+
+        }
+    }
+    else
+    {
+        qDebug() << "Error: addCampus did not get an ID value from the table";
+    }
+}
+*/
+
+/*
+bool DbManager::campusExists(QString &campus)
+{
+    QSqlQuery query;
+    bool success;
+    bool found;
+
+    query.prepare("SELECT EXISTS(SELECT 1 FROM CAMPUS=:CAMPUS");
+    query.bindValue(":CAMPUS", campus);
+    success = query.exec();
+
+    if (!success)
+    {
+        //qDebug() << "Campus exist error: " << query.lastError();
+        return false;
+    }
+
+    found = query.first();
+
+    return found;
+}
+*/
+
+
