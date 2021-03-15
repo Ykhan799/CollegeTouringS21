@@ -84,9 +84,14 @@ void MainWindow::on_actionView_Database_triggered()
  ************************************************************************/
 void MainWindow::on_uciButton_clicked()
 {
-    tripPlannerWindow = new tripRoutePlanner(nullptr, UCI);
-    tripPlannerWindow->exec();
-    delete tripPlannerWindow;
+    // check for all 13 campuses here
+    if((database->getCampusNames()).size() < 13) {
+        QMessageBox::information(this, "Error", "Additional campuses have not been added to the database. Trip cannot be planned.");
+    }else {
+        tripPlannerWindow = new tripRoutePlanner(nullptr, UCI);
+        tripPlannerWindow->exec();
+        delete tripPlannerWindow;
+    }
 }
 
 void MainWindow::on_asuButton_clicked()

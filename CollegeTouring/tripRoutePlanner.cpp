@@ -16,28 +16,27 @@ tripRoutePlanner::tripRoutePlanner(QWidget *parent, const TripType& tripType, Db
     temp = database->getCampusNames();
 
     switch(tripType) {
-    case UCI: // if triptype is uci, visit the 11 campuses
-        for(int i = 0; i < 11; i++) {
+    case UCI: // if triptype is uci, visit the 13 campuses
+        for(int i = 0; i < 13; i++) {
             campusesToVisit.push_back(temp[i]);
         }
         initialCampus = "University of California, Irvine (UCI)";
         break;
 
-    case ASU: // if triptype is asu, visit all 13 campuses
+    case ASU: // if triptype is asu, visit selected number of campuses in shortest trip
         for(int i = 0; i < 13 ; i++) {
             campusesToVisit.push_back(temp[i]);
         }
         initialCampus = "Arizona State University";
         break;
 
-    case SADDLEBACK:
+    case SADDLEBACK: // if tripType is saddleback, visit 11 campuses
         for(int i = 0; i < 11; i++) {
             campusesToVisit.push_back(temp[i]);
         }
         initialCampus = "Saddleback College";
         break;
     case CUSTOM: // if triptype is custom, open the custom triptype dialog
-
         break;
     }
 

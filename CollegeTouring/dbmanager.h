@@ -96,6 +96,14 @@ public:
     //! \return true if souvenir exists for a certain campus
     //!
     bool souvExists(QString& campus, QString& souvenirName);
+
+
+    //!
+    //! \brief getInitialCampusNames
+    //! \return QString vector of unique campus names ONLY campuses 1 - 11
+    //!
+    vector<QString> getInitialCampusNames();
+
 private:
     //!
     //! \brief m_db

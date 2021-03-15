@@ -221,3 +221,19 @@ bool DbManager::souvExists(QString &campus, QString &souvenirName)
     return found;
 }
 
+vector<QString> DbManager::getInitialCampusNames()
+{
+    vector<QString> names;
+
+    // query database for campus names
+    QSqlQuery query("SELECT DISTINCT START FROM CAMPUSES WHERE ID BETWEEN 0 AND 47");
+
+     // add campus names to vector (unique)
+    while(query.next()) {
+        QString out = query.value(0).toString();
+        names.push_back(out);
+    }
+
+    return names;
+}
+
