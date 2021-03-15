@@ -194,6 +194,9 @@
   <zorder>closeButtonBox</zorder>
   <zorder>horizontalLayoutWidget</zorder>
   <zorder>addCampus</zorder>
+  <zorder>tabWidget</zorder>
+  <zorder>closeButtonBox</zorder>
+  <zorder>horizontalLayoutWidget</zorder>
  </widget>
  <resources/>
  <connections>

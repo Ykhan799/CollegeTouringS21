@@ -115,6 +115,34 @@ void databaseViewForm::on_pushButton_clicked()
     }
 }
 
+
+        // update database model
+        auto model = database->getSouvenirsModel(ui->collegeSelectBoxSouv->currentText());
+
+        model->setHeaderData(0, Qt::Horizontal, QObject::tr("Campus"));
+        model->setHeaderData(1, Qt::Horizontal, QObject::tr("Souvenir"));
+        model->setHeaderData(2, Qt::Horizontal, QObject::tr("Price (USD)"));
+
+        ui->souvenirTableView->setModel(model);
+        ui->souvenirTableView->setColumnWidth(0,310);
+        ui->souvenirTableView->setColumnWidth(1,310);
+        ui->souvenirTableView->setColumnWidth(2,125);
+    } else {
+        QMessageBox error;
+        QPixmap icon;
+        icon.load(":/images/bonk_emoji.png");
+        icon = icon.scaled(100,100);
+
+        error.setText("Error!");
+        error.setInformativeText("Only administrators may modify the database.");
+        error.setStandardButtons(QMessageBox::Ok);
+        error.setIconPixmap(icon);
+        error.setWindowTitle("BONK!");
+        QApplication::beep();
+        error.exec();
+    }
+}
+
 void databaseViewForm::on_addCampus_clicked()
 {
     // only admins can add campus
@@ -132,9 +160,11 @@ void databaseViewForm::on_addCampus_clicked()
 }
 
 
+
 /*std::vector<QString> databaseViewForm::getActiveTableRow()
 {
 }*/
+
 
 void databaseViewForm::on_showCartButton_clicked() {
    cart = new shoppingcart(this);

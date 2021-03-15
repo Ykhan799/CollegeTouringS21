@@ -221,6 +221,7 @@ bool DbManager::souvExists(QString &campus, QString &souvenirName)
     return found;
 }
 
+
 // May or may not need functions
 /*
 void addCampus(QString& startCampus, QString& endCampus, double& distance)
@@ -313,4 +314,5 @@ bool DbManager::campusExists(QString &campus)
     return found;
 }
 */
+
 

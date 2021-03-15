@@ -12,6 +12,7 @@
 #include "shoppingcart.h"
 #include "addcampuses.h
 
+
 namespace Ui {
 class databaseViewForm;
 }
@@ -56,6 +57,7 @@ private:
     DbManager* database;
     modifySouvenirs* modDialog;
     addcampuses *addcampus;
+
 
     bool isAdmin;
 

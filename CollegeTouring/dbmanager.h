@@ -96,9 +96,11 @@ public:
     //! \return true if souvenir exists for a certain campus
     //!
     bool souvExists(QString& campus, QString& souvenirName);
+
     
     // May or may not need. 
     //void addCampus(QString& startCampus, QString& endCampus, double& distance);
+
 private:
     //!
     //! \brief m_db
