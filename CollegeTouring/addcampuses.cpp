@@ -78,19 +78,13 @@ void addcampuses::on_addFile_clicked()
                     qDebug() << "addCampus error: " << query.lastError();
                 }
 
-                else
-                {
-                    QMessageBox::information(this,QObject::tr("System Message"),tr("Campus distances have been added!"),QMessageBox::Ok);
-                }
-
             } else {
                 qDebug() << "Error: addCampus did not get an ID value from the table.";
             }
           }
          inFile.close();
-
-        }
     }
+}
 
 void addcampuses::on_AddCampus_clicked()
 {
