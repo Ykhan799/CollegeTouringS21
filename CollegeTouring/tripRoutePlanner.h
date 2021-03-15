@@ -21,7 +21,7 @@ class tripRoutePlanner : public QDialog
 
 public:
 
-    explicit tripRoutePlanner(QWidget *parent = nullptr, const TripType& = UCI, DbManager* dbManager = nullptr, int visitNum = 11);
+    explicit tripRoutePlanner(QWidget *parent = nullptr, const TripType& = SADDLEBACK, DbManager* dbManager = nullptr, int visitNum = 11);
 
     ~tripRoutePlanner();
 

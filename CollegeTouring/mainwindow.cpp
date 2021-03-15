@@ -96,21 +96,27 @@ void MainWindow::on_uciButton_clicked()
 
 void MainWindow::on_asuButton_clicked()
 {
-    int campusesToVisit;
+    vector<QString> temp = database->getCampusNames();
+    vector<QString> visitList;
 
-    // get number of campuses to go to
-    inputDialog = new numberInputDialog;
-    inputDialog->exec();
-    campusesToVisit = inputDialog->getInputNum();
-    delete inputDialog;
+    // remove ASU from the list of campuses
+    for(auto i = temp.begin(); i < temp.end(); i++) {
+        if(*i == "Arizona State University") {
+            temp.erase(i);
+        }
 
-    // check for all 13 campuses here
-    if((database->getCampusNames()).size() < campusesToVisit) {
-        QMessageBox::information(this, "Error", "There are not enough campuses in the database. Trip cannot be planned.");
-    }else {
-        tripPlannerWindow = new tripRoutePlanner(nullptr, ASU, database, campusesToVisit);
-        tripPlannerWindow->exec();
-        delete tripPlannerWindow;
+    campusSelect = new CampusSelectDialog(nullptr, temp);
+    campusSelect->exec();
+
+    qDebug() << campusSelect->getChecked();
+    visitList = campusSelect->getChecked();
+
+    delete campusSelect;
+
+
+    tripPlannerWindow = new tripRoutePlanner(nullptr, ASU, database, visitList.size());
+    tripPlannerWindow->exec();
+    delete tripPlannerWindow;
     }
 }
 

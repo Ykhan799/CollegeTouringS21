@@ -9,6 +9,7 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    campusselectdialog.cpp \
     databaseviewform.cpp \
     dbmanager.cpp \
     logindialog.cpp \
@@ -20,6 +21,7 @@ SOURCES += \
     tripRoutePlanner.cpp
 
 HEADERS += \
+    campusselectdialog.h \
     databaseviewform.h \
     dbmanager.h \
     logindialog.h \
@@ -30,6 +32,7 @@ HEADERS += \
     tripRoutePlanner.h
 
 FORMS += \
+    campusselectdialog.ui \
     databaseviewform.ui \
     logindialog.ui \
     mainwindow.ui \

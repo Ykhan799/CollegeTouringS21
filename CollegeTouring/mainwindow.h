@@ -9,6 +9,7 @@
 #include "logindialog.h"
 #include "tripRoutePlanner.h"
 #include "numberinputdialog.h"
+#include "campusselectdialog.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -43,7 +44,7 @@ private:
     tripRoutePlanner* tripPlannerWindow;
     DbManager* database;
     numberInputDialog* inputDialog;
-
+    CampusSelectDialog* campusSelect;
 
     bool isAdmin;
 };
