@@ -21,7 +21,7 @@ public:
     explicit CampusSelectDialog(QWidget *parent, vector<QString> campuses);
     ~CampusSelectDialog();
 
-    vector<QString> getChecked() const;
+    vector<QString> getChecked();
 
 private slots:
 

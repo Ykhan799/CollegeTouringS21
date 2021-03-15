@@ -26,15 +26,30 @@ CampusSelectDialog::~CampusSelectDialog()
     delete ui;
 }
 
-vector<QString> CampusSelectDialog::getChecked() const
+vector<QString> CampusSelectDialog::getChecked()
 {
-    auto temp = ui->checkboxListWidget->selectedItems();
-    vector<QString> returnCampuses;
+    vector<QString> checkedCampuses;
 
+    //qDebug() << "rows: " << ui->checkboxListWidget->count();
 
-    for(const auto& i : temp) {
-        returnCampuses.push_back(i->text());
+    for (int i = 0; i < ui->checkboxListWidget->count(); ++i) {
+        QListWidgetItem *item = ui->checkboxListWidget->item(i);
+
+        //qDebug() << "item: " << item->text() << "checked: " << item->checkState();
+
+        if(item->checkState() == Qt::Checked) {
+            checkedCampuses.push_back(item->text());
+            //qDebug() << item->text() << " is checked.";
+            //qDebug() << checkedCampuses;
+        }
+        item = nullptr;
     }
 
-    return returnCampuses; // dummy
+    if(checkedCampuses.empty()) {
+        checkedCampuses.push_back("EMPTY");
+    }
+
+    // qDebug() << checkedCampuses;
+
+    return checkedCampuses;
 }

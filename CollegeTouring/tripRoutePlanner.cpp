@@ -80,7 +80,6 @@ tripRoutePlanner::tripRoutePlanner(QWidget *parent, const TripType& tripType, Db
 
 tripRoutePlanner::~tripRoutePlanner()
 {
-    delete database;
     delete ui;
 }
 
@@ -134,14 +133,14 @@ void tripRoutePlanner::createRoute(QString campus)
 
 void tripRoutePlanner::on_cancelTripButton_clicked()
 {
-    close(); // close this window
+    tripRoutePlanner::close(); // close this window
 }
 
 void tripRoutePlanner::on_beginTripButton_clicked()
 {
     if (campusesToVisit.empty())
     {
-        close();
+        tripRoutePlanner::close();
     }
 
     // determine the complete route
@@ -156,7 +155,7 @@ void tripRoutePlanner::on_beginTripButton_clicked()
 
 void tripRoutePlanner::on_exitButton_clicked()
 {
-    close(); // close this window
+    tripRoutePlanner::close(); // close this window
 }
 
 void tripRoutePlanner::on_nextButton_clicked()

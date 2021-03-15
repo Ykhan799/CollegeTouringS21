@@ -89,6 +89,7 @@ void MainWindow::on_uciButton_clicked()
         QMessageBox::information(this, "Error", "Additional campuses have not been added to the database. Trip cannot be planned.");
     }else {
         tripPlannerWindow = new tripRoutePlanner(nullptr, UCI, database, 13);
+        tripPlannerWindow->setWindowFlags(Qt::Dialog | Qt::WindowTitleHint);
         tripPlannerWindow->exec();
         delete tripPlannerWindow;
     }
@@ -104,25 +105,32 @@ void MainWindow::on_asuButton_clicked()
         if(*i == "Arizona State University") {
             temp.erase(i);
         }
+        }
 
     campusSelect = new CampusSelectDialog(nullptr, temp);
+    campusSelect->setWindowFlags(Qt::Dialog | Qt::WindowTitleHint);
     campusSelect->exec();
-
-    qDebug() << campusSelect->getChecked();
     visitList = campusSelect->getChecked();
+    //qDebug() << visitList;
 
     delete campusSelect;
 
-
-    tripPlannerWindow = new tripRoutePlanner(nullptr, ASU, database, visitList.size());
-    tripPlannerWindow->exec();
-    delete tripPlannerWindow;
+    if(visitList[0] == "EMPTY") {
+        QMessageBox::information(this, "Error", "Please select at least one campus to visit.");
+    }else {
+        tripPlannerWindow = new tripRoutePlanner(nullptr, ASU, database, visitList.size());
+        tripPlannerWindow->setWindowFlags(Qt::Dialog | Qt::WindowTitleHint);
+        tripPlannerWindow->exec();
+        delete tripPlannerWindow;
     }
+
 }
 
 void MainWindow::on_saddlebackButton_clicked()
 {
     tripPlannerWindow = new tripRoutePlanner(nullptr, SADDLEBACK, database, 11);
+    tripPlannerWindow->setWindowFlags(Qt::Dialog | Qt::WindowTitleHint);
     tripPlannerWindow->exec();
+
     delete tripPlannerWindow;
 }
