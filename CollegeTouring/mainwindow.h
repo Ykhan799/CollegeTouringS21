@@ -8,6 +8,7 @@
 #include "databaseviewform.h"
 #include "logindialog.h"
 #include "tripRoutePlanner.h"
+#include "numberinputdialog.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -41,6 +42,7 @@ private:
     loginDialog* lDialog;
     tripRoutePlanner* tripPlannerWindow;
     DbManager* database;
+    numberInputDialog* inputDialog;
 
 
     bool isAdmin;

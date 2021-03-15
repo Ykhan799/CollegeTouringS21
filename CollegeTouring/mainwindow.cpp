@@ -88,7 +88,7 @@ void MainWindow::on_uciButton_clicked()
     if((database->getCampusNames()).size() < 13) {
         QMessageBox::information(this, "Error", "Additional campuses have not been added to the database. Trip cannot be planned.");
     }else {
-        tripPlannerWindow = new tripRoutePlanner(nullptr, UCI);
+        tripPlannerWindow = new tripRoutePlanner(nullptr, UCI, database, 13);
         tripPlannerWindow->exec();
         delete tripPlannerWindow;
     }
@@ -96,11 +96,19 @@ void MainWindow::on_uciButton_clicked()
 
 void MainWindow::on_asuButton_clicked()
 {
+    int campusesToVisit;
+
+    // get number of campuses to go to
+    inputDialog = new numberInputDialog;
+    inputDialog->exec();
+    campusesToVisit = inputDialog->getInputNum();
+    delete inputDialog;
+
     // check for all 13 campuses here
-    if((database->getCampusNames()).size() < 13) {
-        QMessageBox::information(this, "Error", "Additional campuses have not been added to the database. Trip cannot be planned.");
+    if((database->getCampusNames()).size() < campusesToVisit) {
+        QMessageBox::information(this, "Error", "There are not enough campuses in the database. Trip cannot be planned.");
     }else {
-        tripPlannerWindow = new tripRoutePlanner(nullptr, ASU);
+        tripPlannerWindow = new tripRoutePlanner(nullptr, ASU, database, campusesToVisit);
         tripPlannerWindow->exec();
         delete tripPlannerWindow;
     }
@@ -108,7 +116,7 @@ void MainWindow::on_asuButton_clicked()
 
 void MainWindow::on_saddlebackButton_clicked()
 {
-    tripPlannerWindow = new tripRoutePlanner(nullptr, SADDLEBACK);
+    tripPlannerWindow = new tripRoutePlanner(nullptr, SADDLEBACK, database, 11);
     tripPlannerWindow->exec();
     delete tripPlannerWindow;
 }

@@ -1,7 +1,7 @@
 #include "tripRoutePlanner.h"
 #include "ui_tripRoutePlanner.h"
 
-tripRoutePlanner::tripRoutePlanner(QWidget *parent, const TripType& tripType, DbManager* dbManager) :
+tripRoutePlanner::tripRoutePlanner(QWidget *parent, const TripType& tripType, DbManager* dbManager, int visitNum) :
     QDialog(parent),
     ui(new Ui::tripRoutePlanner)
 {    
@@ -17,21 +17,21 @@ tripRoutePlanner::tripRoutePlanner(QWidget *parent, const TripType& tripType, Db
 
     switch(tripType) {
     case UCI: // if triptype is uci, visit the 13 campuses
-        for(int i = 0; i < 13; i++) {
+        for(int i = 0; i < visitNum; i++) {
             campusesToVisit.push_back(temp[i]);
         }
         initialCampus = "University of California, Irvine (UCI)";
         break;
 
     case ASU: // if triptype is asu, visit selected number of campuses in shortest trip
-        for(int i = 0; i < 13 ; i++) {
+        for(int i = 0; i < visitNum ; i++) {
             campusesToVisit.push_back(temp[i]);
         }
         initialCampus = "Arizona State University";
         break;
 
     case SADDLEBACK: // if tripType is saddleback, visit 11 campuses
-        for(int i = 0; i < 11; i++) {
+        for(int i = 0; i < visitNum; i++) {
             campusesToVisit.push_back(temp[i]);
         }
         initialCampus = "Saddleback College";

@@ -15,6 +15,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     modifysouvenirs.cpp \
+    numberinputdialog.cpp \
     shoppingcart.cpp \
     tripRoutePlanner.cpp
 
@@ -24,6 +25,7 @@ HEADERS += \
     logindialog.h \
     mainwindow.h \
     modifysouvenirs.h \
+    numberinputdialog.h \
     shoppingcart.h \
     tripRoutePlanner.h
 
@@ -32,6 +34,7 @@ FORMS += \
     logindialog.ui \
     mainwindow.ui \
     modifysouvenirs.ui \
+    numberinputdialog.ui \
     shoppingcart.ui \
     tripRoutePlanner.ui
 
