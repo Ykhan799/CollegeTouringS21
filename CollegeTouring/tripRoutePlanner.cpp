@@ -6,6 +6,7 @@ tripRoutePlanner::tripRoutePlanner(QWidget *parent, const TripType& tripType, Db
     ui(new Ui::tripRoutePlanner)
 {    
     vector<QString> temp;
+    QString tempItinerary;
 
     // get database manager from parent class
     database = dbManager;
@@ -29,12 +30,26 @@ tripRoutePlanner::tripRoutePlanner(QWidget *parent, const TripType& tripType, Db
         initialCampus = "Arizona State University";
         break;
 
+    case SADDLEBACK:
+        for(int i = 0; i < 11; i++) {
+            campusesToVisit.push_back(temp[i]);
+        }
+        initialCampus = "Saddleback College";
+        break;
     case CUSTOM: // if triptype is custom, open the custom triptype dialog
 
         break;
     }
 
     ui->setupUi(this);
+
+    // populate the itinerary
+    for(const auto& i : campusesToVisit) {
+        tempItinerary += i;
+        tempItinerary += '\n';
+    }
+    ui->collegesToVisitLabel->setText(tempItinerary);
+    ui->startingCollegeLabel->setText("The following colleges will be visited in the most efficient order,\n starting at: " + initialCampus + '.');
 }
 
 tripRoutePlanner::~tripRoutePlanner()

@@ -100,3 +100,10 @@ void MainWindow::on_asuButton_clicked()
         delete tripPlannerWindow;
     }
 }
+
+void MainWindow::on_saddlebackButton_clicked()
+{
+    tripPlannerWindow = new tripRoutePlanner(nullptr, SADDLEBACK);
+    tripPlannerWindow->exec();
+    delete tripPlannerWindow;
+}

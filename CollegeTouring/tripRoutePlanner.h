@@ -9,6 +9,7 @@
 enum TripType {
     UCI,
     ASU,
+    SADDLEBACK,
     CUSTOM
 };
 

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
+    <width>547</width>
     <height>444</height>
    </rect>
   </property>
@@ -18,7 +18,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>400</width>
+     <width>541</width>
      <height>471</height>
     </rect>
    </property>
@@ -29,7 +29,7 @@
     <widget class="QLabel" name="titleLabel">
      <property name="geometry">
       <rect>
-       <x>10</x>
+       <x>90</x>
        <y>10</y>
        <width>381</width>
        <height>31</height>
@@ -43,37 +43,16 @@
       </font>
      </property>
      <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Trip from UCI to initial 11 campuses&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="descriptionLabel">
-     <property name="geometry">
-      <rect>
-       <x>40</x>
-       <y>40</y>
-       <width>331</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>This trip will begin at the UCI campus and visit each of following campuses in the most efficient order:</string>
-     </property>
-     <property name="wordWrap">
-      <bool>true</bool>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Trip Itinerary:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
     <widget class="QPushButton" name="cancelTripButton">
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>410</y>
+       <y>402</y>
        <width>75</width>
-       <height>23</height>
+       <height>31</height>
       </rect>
      </property>
      <property name="text">
@@ -83,10 +62,10 @@
     <widget class="QPushButton" name="beginTripButton">
      <property name="geometry">
       <rect>
-       <x>310</x>
-       <y>410</y>
+       <x>460</x>
+       <y>400</y>
        <width>75</width>
-       <height>23</height>
+       <height>31</height>
       </rect>
      </property>
      <property name="text">
@@ -96,9 +75,9 @@
     <widget class="QLabel" name="collegesToVisitLabel">
      <property name="geometry">
       <rect>
-       <x>40</x>
-       <y>110</y>
-       <width>321</width>
+       <x>20</x>
+       <y>100</y>
+       <width>501</width>
        <height>291</height>
       </rect>
      </property>
@@ -108,19 +87,23 @@
       </font>
      </property>
      <property name="text">
-      <string>Arizona State University
-Massachusetts Institute of Technology (MIT)
-Northwestern
-Ohio State University
-Saddleback College
-University of Michigan
-University of California, Los Angeles (UCLA)
-University of Oregon
-University of the Pacific
-University of Wisconsin</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;(placeholder)&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;(placeholder)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="startingCollegeLabel">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>30</y>
+       <width>371</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;placeholder itinerary message&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
    </widget>
@@ -128,9 +111,9 @@ University of Wisconsin</string>
     <widget class="QLabel" name="welcomeLabel">
      <property name="geometry">
       <rect>
-       <x>0</x>
+       <x>10</x>
        <y>10</y>
-       <width>401</width>
+       <width>531</width>
        <height>31</height>
       </rect>
      </property>
@@ -167,7 +150,7 @@ University of Wisconsin</string>
     <widget class="QPushButton" name="nextButton">
      <property name="geometry">
       <rect>
-       <x>289</x>
+       <x>440</x>
        <y>410</y>
        <width>101</width>
        <height>23</height>
@@ -180,7 +163,7 @@ University of Wisconsin</string>
     <widget class="QPushButton" name="souvenirsButton">
      <property name="geometry">
       <rect>
-       <x>162</x>
+       <x>230</x>
        <y>410</y>
        <width>75</width>
        <height>23</height>
