@@ -1,4 +1,3 @@
-
 #include "databaseviewform.h"
 #include "ui_databaseviewform.h"
 
