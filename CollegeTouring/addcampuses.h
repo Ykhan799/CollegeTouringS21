@@ -29,10 +29,18 @@ public:
     ~addcampuses();
 
 private slots:
-    // Need to do DOxygen
+    /*!
+     * \brief on_addFile_clicked
+     * Allows the administrator to add a text file in order to add campuses and distances
+     */
     void on_addFile_clicked();
-    // Need to do DOxygen
+
+    /*!
+     * \brief on_AddCampus_clicked
+     * Closes the addcampuses window
+     */
     void on_AddCampus_clicked();
+
 
 private:
     Ui::addcampuses *ui;
