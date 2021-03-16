@@ -140,3 +140,57 @@ void MainWindow::on_saddlebackButton_clicked()
 
     delete tripPlannerWindow;
 }
+
+void MainWindow::on_customButton_clicked()
+{
+    QString startCampus;
+    vector<QString> temp = database->getCampusNames();
+    vector<QString> visitList;
+
+    campusSelect = new CampusSelectDialog(nullptr, temp);
+    campusSelect->setWindowFlags(Qt::Dialog | Qt::WindowTitleHint);
+    QMessageBox::information(this, "Start", "Select a campus to start at.");
+    campusSelect->exec();
+
+    qDebug() << campusSelect->getChecked().size();
+
+    if(campusSelect->getChecked().size() > 1) {
+        QMessageBox::information(this, "Error", "Please only select one campus to start at.");
+    }else if (campusSelect->getChecked()[0] == "EMPTY"){
+        QMessageBox::information(this, "Error", "Please select a campus to begin your trip at.");
+    }else {
+        // set start campus
+        startCampus = campusSelect->getChecked()[0];
+
+        // remove starting campus from campus list
+        for(auto i = temp.begin(); i < temp.end(); i++) {
+            if(*i == startCampus) {
+                temp.erase(i);
+            }
+        }
+
+        delete campusSelect;
+        campusSelect = new CampusSelectDialog(nullptr, temp);
+        campusSelect->setWindowFlags(Qt::Dialog | Qt::WindowTitleHint);
+        QMessageBox::information(this, "Start", "Select campuses to visit.");
+        campusSelect->exec();
+        visitList = campusSelect->getChecked();
+        delete campusSelect;
+
+        if(visitList[0] == "EMPTY") {
+            QMessageBox::information(this, "Error", "Please select at least one campus to visit.");
+        }else {
+            // re add startCampus to the vector, order doesn't matter here
+            visitList.push_back(visitList[0]);
+            visitList[0] = startCampus;
+
+            // qDebug() << visitList;
+
+            tripPlannerWindow = new tripRoutePlanner(nullptr, ASU, database, visitList.size(), &visitList);
+            tripPlannerWindow->setWindowFlags(Qt::Dialog | Qt::WindowTitleHint);
+            tripPlannerWindow->exec();
+            delete tripPlannerWindow;
+        }
+
+    }
+}
