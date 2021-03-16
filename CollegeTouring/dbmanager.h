@@ -105,6 +105,15 @@ public:
     //! \param distance   - Distance between startCampus and endCampus
     //! 
     void addCampus(QString& startCampus, QString& endCampus, double& distance);
+    
+    //!
+    //! \brief campusExists
+    //! \param startCampus - First Campus
+    //! \param endCampus   - Second Campus
+    //! \param distance    - Distance between startCampus and endCampus
+    //! \return - True or False
+    //! If Campus is added, true is returned. Otherwise, false is returned
+    bool campusExists(QString& startCampus, QString& endCampus, double& distance);
 
 private:
     //!
