@@ -18,6 +18,7 @@ SOURCES += \
     mainwindow.cpp \
     modifysouvenirs.cpp \
     numberinputdialog.cpp \
+    purchasewindow.cpp \
     shoppingcart.cpp \
     tripRoutePlanner.cpp
 
@@ -30,6 +31,7 @@ HEADERS += \
     mainwindow.h \
     modifysouvenirs.h \
     numberinputdialog.h \
+    purchasewindow.h \
     shoppingcart.h \
     tripRoutePlanner.h
 
@@ -41,6 +43,7 @@ FORMS += \
     mainwindow.ui \
     modifysouvenirs.ui \
     numberinputdialog.ui \
+    purchasewindow.ui \
     shoppingcart.ui \
     tripRoutePlanner.ui
 

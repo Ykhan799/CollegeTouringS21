@@ -5,6 +5,7 @@
 #include <queue>
 #include <list>
 #include "dbmanager.h"
+#include "purchasewindow.h"
 
 enum TripType {
     UCI,
@@ -12,6 +13,15 @@ enum TripType {
     SADDLEBACK,
     CUSTOM
 };
+
+//struct Purchase
+//{
+//    string campusName;
+//    string souvenirName;
+//    int numberPurchased;
+//    double price;
+//    double totalSpent;
+//};
 
 namespace Ui { class tripRoutePlanner; }
 
@@ -59,6 +69,8 @@ private slots:
     //!
     void on_nextButton_clicked();
 
+    void on_souvenirsButton_clicked();
+
 private:
     Ui::tripRoutePlanner *ui;
 
@@ -66,6 +78,8 @@ private:
     //! \brief database used to access data stored in the database
     //!
     DbManager* database;
+
+    purchasewindow* purchaseWindow;
 
     //!
     //! \brief initialCampus holds the name of the first campus in the trip
@@ -76,6 +90,18 @@ private:
     //! \brief finalCampus holds the name of the last campus in the trip
     //!
     QString finalCampus;
+
+    //!
+    //! \brief currentCampus holds the name of the current campus in the trip
+    //!
+
+    QString currentCampus;
+
+    //!
+    //! \brief purchases holds all current purchases in the trip
+    //!
+
+    //vector<Purchase> purchases;
 
     //!
     //! \brief campusesToVisit holds all campuses that are planned to be visited in the current trip

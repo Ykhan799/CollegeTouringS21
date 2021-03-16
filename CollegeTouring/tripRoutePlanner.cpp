@@ -169,6 +169,8 @@ void tripRoutePlanner::on_nextButton_clicked()
 
         ui->distanceLabel->setText("");
 
+        currentCampus = route.front();
+
         route.pop();
 
         if (route.empty())
@@ -196,4 +198,13 @@ void tripRoutePlanner::on_nextButton_clicked()
         ui->unitsLabel->setText("miles");
     }
 
+}
+
+void tripRoutePlanner::on_souvenirsButton_clicked()
+{
+
+    purchaseWindow = new purchasewindow(nullptr, currentCampus);
+    purchaseWindow->setWindowFlags(Qt::Dialog | Qt::WindowTitleHint);
+    purchaseWindow->exec();
+    delete purchaseWindow;
 }
