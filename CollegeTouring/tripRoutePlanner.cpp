@@ -182,7 +182,7 @@ void tripRoutePlanner::on_nextButton_clicked()
     else
     {
         ui->nextButton->setVisible(false);
-        ui->souvenirsButton->setVisible(false);
+        ui->souvenirsButton->setText("Transactions");
         ui->exitButton->setText("Exit");
         ui->welcomeLabel->setText("Route Summary");
 
@@ -202,9 +202,27 @@ void tripRoutePlanner::on_nextButton_clicked()
 
 void tripRoutePlanner::on_souvenirsButton_clicked()
 {
+    if (ui->souvenirsButton->text() != "Transactions")
+    {
+        purchaseWindow = new purchasewindow(nullptr, currentCampus);
+        purchaseWindow->setWindowFlags(Qt::Dialog | Qt::WindowTitleHint);
+        purchaseWindow->exec();
 
-    purchaseWindow = new purchasewindow(nullptr, currentCampus);
-    purchaseWindow->setWindowFlags(Qt::Dialog | Qt::WindowTitleHint);
-    purchaseWindow->exec();
-    delete purchaseWindow;
+        // add all new purchases to the running total of purchases in this trip
+        for (auto it = purchaseWindow->purchases.begin(); it != purchaseWindow->purchases.end(); it++)
+        {
+            tripPurchases.push_back(*it);
+        }
+
+        delete purchaseWindow;
+    }
+
+    else
+    {
+//        vector<Purchase>* temp = &tripPurchases;
+//        displayPurchases = new displaypurchases(nullptr, temp);
+//        displayPurchases->setWindowFlags(Qt::Dialog | Qt::WindowTitleHint);
+//        displayPurchases->exec();
+//        delete displayPurchases;
+    }
 }

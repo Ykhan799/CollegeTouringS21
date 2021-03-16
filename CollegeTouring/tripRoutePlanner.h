@@ -4,8 +4,10 @@
 #include <QDialog>
 #include <queue>
 #include <list>
+#include <QTextEdit>
 #include "dbmanager.h"
 #include "purchasewindow.h"
+#include "displaypurchases.h"
 
 enum TripType {
     UCI,
@@ -13,15 +15,6 @@ enum TripType {
     SADDLEBACK,
     CUSTOM
 };
-
-//struct Purchase
-//{
-//    string campusName;
-//    string souvenirName;
-//    int numberPurchased;
-//    double price;
-//    double totalSpent;
-//};
 
 namespace Ui { class tripRoutePlanner; }
 
@@ -81,6 +74,8 @@ private:
 
     purchasewindow* purchaseWindow;
 
+    displaypurchases* displayPurchases;
+
     //!
     //! \brief initialCampus holds the name of the first campus in the trip
     //!
@@ -101,7 +96,7 @@ private:
     //! \brief purchases holds all current purchases in the trip
     //!
 
-    //vector<Purchase> purchases;
+    vector<Purchase> tripPurchases;
 
     //!
     //! \brief campusesToVisit holds all campuses that are planned to be visited in the current trip

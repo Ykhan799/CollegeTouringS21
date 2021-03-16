@@ -13,6 +13,7 @@ SOURCES += \
     addcampuses.cpp \
     databaseviewform.cpp \
     dbmanager.cpp \
+    displaypurchases.cpp \
     logindialog.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -27,6 +28,7 @@ HEADERS += \
     addcampuses.h \
     databaseviewform.h \
     dbmanager.h \
+    displaypurchases.h \
     logindialog.h \
     mainwindow.h \
     modifysouvenirs.h \
@@ -39,6 +41,7 @@ FORMS += \
     campusselectdialog.ui \
     addcampuses.ui \
     databaseviewform.ui \
+    displaypurchases.ui \
     logindialog.ui \
     mainwindow.ui \
     modifysouvenirs.ui \

@@ -3,8 +3,17 @@
 
 #include <QDialog>
 #include <vector>
+#include <QMessageBox>
 #include "dbmanager.h"
-#include "tripRoutePlanner.h"
+
+struct Purchase
+{
+    QString campusName;
+    QString souvenirName;
+    int numberPurchased;
+    double price;
+    double totalSpent;
+};
 
 namespace Ui {
 class purchasewindow;
@@ -18,10 +27,10 @@ public:
     explicit purchasewindow(QWidget *parent = nullptr, const QString& campus = "");
     ~purchasewindow();
 
+    vector<Purchase> purchases;
+
 private slots:
     void on_cancelButton_clicked();
-
-    void on_confirmButton_clicked();
 
     void on_purchaseButton_clicked();
 
@@ -32,7 +41,9 @@ private:
 
     DbManager *database;
 
-    //vector<Purchase> purchases;
+    QString currentCampus;
+
+    vector<QString> souvenirs;
 };
 
 #endif // PURCHASEWINDOW_H
