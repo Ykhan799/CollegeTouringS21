@@ -122,8 +122,7 @@ void MainWindow::on_asuButton_clicked()
         visitList.push_back(visitList[0]);
         visitList[0] = "Arizona State University";
 
-        qDebug() << visitList;
-
+        // qDebug() << visitList;
 
         tripPlannerWindow = new tripRoutePlanner(nullptr, ASU, database, visitList.size(), &visitList);
         tripPlannerWindow->setWindowFlags(Qt::Dialog | Qt::WindowTitleHint);
