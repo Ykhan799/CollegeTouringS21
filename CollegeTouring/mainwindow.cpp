@@ -118,7 +118,14 @@ void MainWindow::on_asuButton_clicked()
     if(visitList[0] == "EMPTY") {
         QMessageBox::information(this, "Error", "Please select at least one campus to visit.");
     }else {
-        tripPlannerWindow = new tripRoutePlanner(nullptr, ASU, database, visitList.size());
+        // re add ASU to the vector, order doesn't matter here
+        visitList.push_back(visitList[0]);
+        visitList[0] = "Arizona State University";
+
+        qDebug() << visitList;
+
+
+        tripPlannerWindow = new tripRoutePlanner(nullptr, ASU, database, visitList.size(), &visitList);
         tripPlannerWindow->setWindowFlags(Qt::Dialog | Qt::WindowTitleHint);
         tripPlannerWindow->exec();
         delete tripPlannerWindow;
