@@ -40,6 +40,16 @@ private slots:
      * Closes the addcampuses window
      */
     void on_AddCampus_clicked();
+    
+    /*!
+     * \brief campusExists
+     * \param start - Starting campus
+     * \param end  - Ending Campus
+     * \param distance - Distance between the two campuses
+     * \return - True or False
+     *  Checks if Campus is added.
+     */
+    bool campusExists(QString& start, QString& end, double& distance);
 
 
 private:
