@@ -1,24 +1,30 @@
-#ifndef INITIALFROMUCIFORM_H
-#define INITIALFROMUCIFORM_H
+#ifndef TRIPROUTEPLANNER_H
+#define TRIPROUTEPLANNER_H
 
 #include <QDialog>
 #include <queue>
 #include <list>
-#include <dbmanager.h>
+#include "dbmanager.h"
 
-namespace Ui {
-class initialFromUciForm;
-}
+enum TripType {
+    UCI,
+    ASU,
+    SADDLEBACK,
+    CUSTOM
+};
 
-class initialFromUciForm : public QDialog
+namespace Ui { class tripRoutePlanner; }
+
+class tripRoutePlanner : public QDialog
 {
     Q_OBJECT
 
 public:
 
-    explicit initialFromUciForm(QWidget *parent = nullptr);
+    explicit tripRoutePlanner(QWidget *parent = nullptr, const TripType& = SADDLEBACK, DbManager* dbManager = nullptr, int visitNum = 11,
+                              vector<QString> *visitList = nullptr);
 
-    ~initialFromUciForm();
+    ~tripRoutePlanner();
 
     //!
     //! \brief createRoute
@@ -54,7 +60,7 @@ private slots:
     void on_nextButton_clicked();
 
 private:
-    Ui::initialFromUciForm *ui;
+    Ui::tripRoutePlanner *ui;
 
     //!
     //! \brief database used to access data stored in the database
@@ -87,4 +93,4 @@ private:
     double totalDistance;
 };
 
-#endif // INITIALFROMUCIFORM_H
+#endif // TRIPROUTEPLANNER_H

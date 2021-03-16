@@ -9,34 +9,40 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    campusselectdialog.cpp \
     addcampuses.cpp \
     databaseviewform.cpp \
     dbmanager.cpp \
-    initialfromuciform.cpp \
     logindialog.cpp \
     main.cpp \
     mainwindow.cpp \
     modifysouvenirs.cpp \
-    shoppingcart.cpp
+    numberinputdialog.cpp \
+    shoppingcart.cpp \
+    tripRoutePlanner.cpp
 
 HEADERS += \
+    campusselectdialog.h \
     addcampuses.h \
     databaseviewform.h \
     dbmanager.h \
-    initialfromuciform.h \
     logindialog.h \
     mainwindow.h \
     modifysouvenirs.h \
-    shoppingcart.h
+    numberinputdialog.h \
+    shoppingcart.h \
+    tripRoutePlanner.h
 
 FORMS += \
+    campusselectdialog.ui \
     addcampuses.ui \
     databaseviewform.ui \
-    initialfromuciform.ui \
     logindialog.ui \
     mainwindow.ui \
     modifysouvenirs.ui \
-    shoppingcart.ui
+    numberinputdialog.ui \
+    shoppingcart.ui \
+    tripRoutePlanner.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

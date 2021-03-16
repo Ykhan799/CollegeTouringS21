@@ -201,11 +201,6 @@ color: rgb(0, 0, 0);</string>
     <string>View Database</string>
    </property>
   </action>
-  <action name="actionVisit_local_colleges_UCI">
-   <property name="text">
-    <string>Visit initial colleges from UCI</string>
-   </property>
-  </action>
  </widget>
  <resources/>
  <connections/>

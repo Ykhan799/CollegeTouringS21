@@ -221,7 +221,47 @@ bool DbManager::souvExists(QString &campus, QString &souvenirName)
     return found;
 }
 
+bool DbManager::campusExists(QString& campus)
+{
+    QSqlQuery query;
+    bool found;
+    bool success;
 
+    query.prepare("SELECT 1 FROM CAMPUSES WHERE START=:CAMPUS");
+    query.bindValue(":CAMPUS", campus);
+
+    success = query.exec();
+
+    if(!success)
+    {
+        // campus does not exist in database
+        qDebug() << "campusExists error: " << query.lastError();
+        found = false;
+    }
+    else
+    {
+        // campus found in database
+        found = query.first();
+    }
+
+    return found;
+}
+
+vector<QString> DbManager::getInitialCampusNames()
+{
+    vector<QString> names;
+
+    // query database for campus names
+    QSqlQuery query("SELECT DISTINCT START FROM CAMPUSES WHERE ID BETWEEN 0 AND 47");
+
+     // add campus names to vector (unique)
+    while(query.next()) {
+        QString out = query.value(0).toString();
+        names.push_back(out);
+    }
+
+    return names;
+}
 
 void addCampus(QString& startCampus, QString& endCampus, double& distance)
 {
@@ -280,6 +320,3 @@ bool campusExists(QString& startCampus, QString& endCampus, double& distance)
 
     return found;
 }
-
-
-
