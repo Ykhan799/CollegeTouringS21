@@ -10,6 +10,7 @@ CONFIG += c++11
 
 SOURCES += \
     campusselectdialog.cpp \
+    addcampuses.cpp \
     databaseviewform.cpp \
     dbmanager.cpp \
     logindialog.cpp \
@@ -22,6 +23,7 @@ SOURCES += \
 
 HEADERS += \
     campusselectdialog.h \
+    addcampuses.h \
     databaseviewform.h \
     dbmanager.h \
     logindialog.h \
@@ -33,6 +35,7 @@ HEADERS += \
 
 FORMS += \
     campusselectdialog.ui \
+    addcampuses.ui \
     databaseviewform.ui \
     logindialog.ui \
     mainwindow.ui \

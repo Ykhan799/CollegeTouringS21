@@ -61,7 +61,7 @@
        <x>0</x>
        <y>450</y>
        <width>361</width>
-       <height>35</height>
+       <height>38</height>
       </rect>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_3">
@@ -104,7 +104,7 @@
        <x>0</x>
        <y>450</y>
        <width>361</width>
-       <height>35</height>
+       <height>38</height>
       </rect>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_4">
@@ -126,32 +126,6 @@
       </item>
      </layout>
     </widget>
-    <widget class="QPushButton" name="showCartButton">
-     <property name="geometry">
-      <rect>
-       <x>690</x>
-       <y>450</y>
-       <width>75</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Show Cart</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="addCartButton">
-     <property name="geometry">
-      <rect>
-       <x>580</x>
-       <y>450</y>
-       <width>75</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Add to Cart</string>
-     </property>
-    </widget>
    </widget>
   </widget>
   <widget class="QWidget" name="horizontalLayoutWidget">
@@ -159,7 +133,7 @@
     <rect>
      <x>10</x>
      <y>530</y>
-     <width>141</width>
+     <width>147</width>
      <height>51</height>
     </rect>
    </property>
@@ -173,9 +147,23 @@
     </item>
    </layout>
   </widget>
+  <widget class="QPushButton" name="addCampus">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>540</y>
+     <width>131</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Add Campus</string>
+   </property>
+  </widget>
   <zorder>tabWidget</zorder>
   <zorder>closeButtonBox</zorder>
   <zorder>horizontalLayoutWidget</zorder>
+  <zorder>addCampus</zorder>
  </widget>
  <resources/>
  <connections>

@@ -110,6 +110,23 @@ public:
     //! \return QString vector of unique campus names ONLY campuses 1 - 11
     //!
     vector<QString> getInitialCampusNames();
+    
+    //!
+    //! \brief addCampus
+    //! \param startCampus - First campus location
+    //! \param endCampus  - Second campus location
+    //! \param distance   - Distance between startCampus and endCampus
+    //! 
+    void addCampus(QString& startCampus, QString& endCampus, double& distance);
+    
+    //!
+    //! \brief campusExists
+    //! \param startCampus - First Campus
+    //! \param endCampus   - Second Campus
+    //! \param distance    - Distance between startCampus and endCampus
+    //! \return - True or False
+    //! If Campus is added, true is returned. Otherwise, false is returned
+    bool campusExists(QString& startCampus, QString& endCampus, double& distance);
 
 private:
     //!

@@ -10,6 +10,8 @@
 #include "dbmanager.h"
 #include "modifysouvenirs.h"
 #include "shoppingcart.h"
+#include "addcampuses.h
+
 
 namespace Ui {
 class databaseViewForm;
@@ -43,12 +45,19 @@ private slots:
     
     // TODO needs documentation
     void on_showCartButton_clicked();
+    
+    //!
+    //! \brief on_addCampus_clicked
+    //! opens the add campus window ONLY if the user is an administrator
+    void on_addCampus_clicked();
 
 private:
     Ui::databaseViewForm *ui;
 
     DbManager* database;
     modifySouvenirs* modDialog;
+    addcampuses *addcampus;
+
 
     bool isAdmin;
 

@@ -263,3 +263,60 @@ vector<QString> DbManager::getInitialCampusNames()
     return names;
 }
 
+void addCampus(QString& startCampus, QString& endCampus, double& distance)
+{
+    QSqlQuery query;
+    int maxID;
+    bool success;
+
+    query.prepare("SELECT max(ID) from CAMPUSES"); // get the maximum id from the table
+    query.exec();
+
+    // get the highest id from the bottom row of the table
+    if(query.next()) {
+        maxID =  query.value(0).toInt();
+        maxID++;
+        qDebug() << maxID;
+
+        query.prepare("INSERT INTO CAMPUSES VALUES(:ID, :START, :STOP, :DIST)");
+        query.bindValue(":ID", maxID); // id is the id of the bottom row + 1
+        query.bindValue(":START", startCampus);
+        query.bindValue(":STOP", endCampus);
+        query.bindValue(":DIST", distance);
+
+        success = query.exec();
+
+        if(!success) {
+            qDebug() << "addCampus error: " << query.lastError();
+        }
+
+    } else {
+        qDebug() << "Error: addCampus did not get an ID value from the table.";
+    }
+
+}
+
+bool campusExists(QString& startCampus, QString& endCampus, double& distance)
+{
+    QSqlQuery query;
+    bool success;
+    bool found;
+
+    query.prepare("SELECT EXISTS(SELECT 1 FROM CAMPUSES WHERE START=:START AND STOP=:STOP AND DIST=:DIST)");
+    query.bindValue(":START", startCampus);
+    query.bindValue(":STOP", endCampus);
+    query.bindValue(":DIST", distance);
+
+    success = query.exec();
+
+    if(!success) {
+          qDebug() << "campusExists error: " << query.lastError();
+          return false;
+    }
+
+    found = query.first();
+
+    //qDebug() << "found: " << found;
+
+    return found;
+}
