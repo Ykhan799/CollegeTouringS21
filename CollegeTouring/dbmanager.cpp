@@ -256,5 +256,30 @@ void addCampus(QString& startCampus, QString& endCampus, double& distance)
 
 }
 
+bool campusExists(QString& startCampus, QString& endCampus, double& distance)
+{
+    QSqlQuery query;
+    bool success;
+    bool found;
+
+    query.prepare("SELECT EXISTS(SELECT 1 FROM CAMPUSES WHERE START=:START AND STOP=:STOP AND DIST=:DIST)");
+    query.bindValue(":START", startCampus);
+    query.bindValue(":STOP", endCampus);
+    query.bindValue(":DIST", distance);
+
+    success = query.exec();
+
+    if(!success) {
+          qDebug() << "campusExists error: " << query.lastError();
+          return false;
+    }
+
+    found = query.first();
+
+    //qDebug() << "found: " << found;
+
+    return found;
+}
+
 
 
