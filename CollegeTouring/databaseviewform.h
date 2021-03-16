@@ -10,7 +10,7 @@
 #include "dbmanager.h"
 #include "modifysouvenirs.h"
 #include "shoppingcart.h"
-#include "addcampuses.h
+#include "addcampuses.h"
 
 
 namespace Ui {
