@@ -63,7 +63,7 @@ void addcampuses::on_addFile_clicked()
             // Checks if a given campus exists 
                 if (campusExists(startDist, endDist, distance))
                 {
-                    QMessageBox::warning(this, "Error", "Campus Exists");
+                    //QMessageBox::warning(this, "Error", "Campus Exists");
                     break;
                 }
                 QSqlQuery query;
