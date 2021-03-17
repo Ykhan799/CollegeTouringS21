@@ -48,7 +48,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Grand Total Spent: $</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Grand Total:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QLabel" name="totalLabel">
@@ -95,7 +95,7 @@
   <widget class="QComboBox" name="campusList">
    <property name="geometry">
     <rect>
-     <x>150</x>
+     <x>170</x>
      <y>500</y>
      <width>161</width>
      <height>31</height>
@@ -105,7 +105,7 @@
   <widget class="QPushButton" name="displayButton">
    <property name="geometry">
     <rect>
-     <x>320</x>
+     <x>340</x>
      <y>500</y>
      <width>75</width>
      <height>31</height>
@@ -136,7 +136,7 @@
     <rect>
      <x>10</x>
      <y>499</y>
-     <width>131</width>
+     <width>171</width>
      <height>31</height>
     </rect>
    </property>

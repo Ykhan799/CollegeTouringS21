@@ -77,7 +77,7 @@ void displaypurchases::populateTransactionTable(vector<Purchase>* purchaseList, 
     }
 
     // display the grand total spent during the trip at the specified campus(es)
-    ui->totalLabel->setText(QString::number(grandTotal));
+    ui->totalLabel->setText("$" + QString::number(grandTotal));
 
     // create and insert items into each individual cell of the transaction table
     for (auto it = tempPurchases.begin(); it != tempPurchases.end(); it++)
@@ -100,13 +100,13 @@ void displaypurchases::populateTransactionTable(vector<Purchase>* purchaseList, 
                 newItem->setText( it->souvenirName );
                 break;
             case 2:
-                newItem->setText( QString::number(it->price) );
+                newItem->setText("$" + QString::number(it->price) );
                 break;
             case 3:
                 newItem->setText( QString::number(it->numberPurchased) );
                 break;
             case 4:
-                newItem->setText( QString::number(it->totalSpent) );
+                newItem->setText("$" + QString::number(it->totalSpent) );
                 break;
             default:
                 break;

@@ -163,9 +163,9 @@
     <widget class="QPushButton" name="souvenirsButton">
      <property name="geometry">
       <rect>
-       <x>230</x>
+       <x>210</x>
        <y>410</y>
-       <width>75</width>
+       <width>121</width>
        <height>23</height>
       </rect>
      </property>
