@@ -34,6 +34,7 @@ void addcampuses::on_addFile_clicked()
     int idNum;
     bool success;
 
+    // Opens up file on computer
     QString fileName = QFileDialog::getOpenFileName(this, tr("Open File"), "/Downloads", tr("Txt Files (*.txt)"));
     QFile file(fileName);
 
@@ -49,13 +50,17 @@ void addcampuses::on_addFile_clicked()
     {
         while (inFile)
         {
+            // reads the two campuses and distances
             getline(inFile, startingDist);
             getline(inFile, endingDist);
             inFile >> distance;
             inFile.ignore(10000, '\n');
+
+            // gets the starting and ending campus
             QString startDist = QString::fromStdString(startingDist);
             QString endDist = QString::fromStdString(endingDist);
 
+            // Checks if Campus is added
             if (campusExists(startDist, endDist, distance))
             {
                 QMessageBox::information(this, QObject::tr("System Message"), tr("Campus already exists. Cannot add campus"));
@@ -73,6 +78,7 @@ void addcampuses::on_addFile_clicked()
                     idNum++;
                     qDebug() << idNum;
 
+                    // Adds into campuses and distance into database
                     query.prepare("INSERT INTO CAMPUSES VALUES(:ID, :START, :STOP, :DIST)");
                     query.bindValue(":ID", idNum); // id is the id of the bottom row + 1
                     query.bindValue(":START", startDist);
@@ -89,10 +95,13 @@ void addcampuses::on_addFile_clicked()
                     qDebug() << "Error: addCampus did not get an ID value from the table.";
                 }
             }
+
           }
+        // closes file
          inFile.close();
     }
 }
+
 
 void addcampuses::on_AddCampus_clicked()
 {
