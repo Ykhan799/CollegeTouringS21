@@ -31,6 +31,12 @@ class displaypurchases : public QDialog
 public:
     explicit displaypurchases(QWidget *parent = nullptr, vector<Purchase>* purchaseList = nullptr);
 
+    //!
+    //! \brief populateTransactionTable
+    //! \param purchaseList vector of purchases made
+    //! \param campus campus to display purchases from
+    //! \param displayAll displays purchases from all campuses if true
+    //!
     void populateTransactionTable( vector<Purchase>* purchaseList = nullptr, const QString& campus = "", bool displayAll = false);
 
     ~displaypurchases();

@@ -125,15 +125,3 @@ void databaseViewForm::on_addCampus_clicked()
         QMessageBox::information(this, QObject::tr("System Message"), tr("Warning. Must be an Admin to add Campus"));
     }
 }
-
-
-
-/*std::vector<QString> databaseViewForm::getActiveTableRow()
-{
-}*/
-
-
-void databaseViewForm::on_showCartButton_clicked() {
-   cart = new shoppingcart(this);
-   cart->show();
-}

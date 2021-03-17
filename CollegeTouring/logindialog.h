@@ -19,6 +19,11 @@ public:
     bool loggedIn();
 
 private slots:
+
+    //!
+    //! \brief on_logInButton_clicked
+    //! validates credentials from input widgets and logs user in if they are correct
+    //!
     void on_logInButton_clicked();
 
 private:

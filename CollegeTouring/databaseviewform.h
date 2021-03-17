@@ -9,7 +9,6 @@
 #include <vector>
 #include "dbmanager.h"
 #include "modifysouvenirs.h"
-#include "shoppingcart.h"
 #include "addcampuses.h"
 
 
@@ -24,9 +23,6 @@ class databaseViewForm : public QDialog
 public:
     explicit databaseViewForm(QWidget *parent = nullptr, bool adminUser = false, DbManager* databaseManager = nullptr);
     ~databaseViewForm();
-
-
-    std::vector<QString> getActiveTableRow();
 
 private slots:
     //!
@@ -45,9 +41,6 @@ private slots:
     //! opens the modify database menu ONLY if user is an administrator.
     void on_pushButton_clicked();
     
-    // TODO needs documentation
-    void on_showCartButton_clicked();
-    
     //!
     //! \brief on_addCampus_clicked
     //! opens the add campus window ONLY if the user is an administrator
@@ -61,8 +54,6 @@ private:
     addcampuses *addcampus;
 
     bool isAdmin;
-
-    shoppingcart *cart;
 
 };
 

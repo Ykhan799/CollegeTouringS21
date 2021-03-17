@@ -20,7 +20,6 @@ SOURCES += \
     modifysouvenirs.cpp \
     numberinputdialog.cpp \
     purchasewindow.cpp \
-    shoppingcart.cpp \
     tripRoutePlanner.cpp
 
 HEADERS += \
@@ -34,7 +33,6 @@ HEADERS += \
     modifysouvenirs.h \
     numberinputdialog.h \
     purchasewindow.h \
-    shoppingcart.h \
     tripRoutePlanner.h
 
 FORMS += \
@@ -47,7 +45,6 @@ FORMS += \
     modifysouvenirs.ui \
     numberinputdialog.ui \
     purchasewindow.ui \
-    shoppingcart.ui \
     tripRoutePlanner.ui
 
 # Default rules for deployment.
