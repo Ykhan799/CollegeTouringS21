@@ -33,6 +33,7 @@ public:
 
     //!
     //! \brief populateTransactionTable
+    //! populates the table of transactions in the window
     //! \param purchaseList vector of purchases made
     //! \param campus campus to display purchases from
     //! \param displayAll displays purchases from all campuses if true
@@ -46,18 +47,21 @@ private slots:
     //!
     //! \brief on_closeButton_clicked
     //! Closes the current displaypurchases window.
+    //!
     void on_closeButton_clicked();
 
     //!
     //! \brief on_displayButton_clicked
     //! Updates the main table of transaction data, applying the selected campus filter.
+    //!
     void on_displayButton_clicked();
 
 private:
     Ui::displaypurchases *ui;
 
     //!
-    //! \brief allPurchases vector of Purchase objects holds all data for all purchases made during the current trip.
+    //! \brief allPurchases
+    //! vector of Purchase objects holds all data for all purchases made during the current trip.
     //!
     vector<Purchase> allPurchases;
 };

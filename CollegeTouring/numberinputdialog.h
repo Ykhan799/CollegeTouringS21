@@ -17,6 +17,7 @@ public:
 
     //!
     //! \brief getInputNum
+    //! gets the number from the dialog
     //! \return inputNum, number input by the user
     //!
     int getInputNum() const { return inputNum;}
@@ -26,6 +27,7 @@ private slots:
     //!
     //! \brief on_buttonBox_accepted
     //! causes the dialog to close, stores the current value of the spinbox
+    //!
     void on_buttonBox_accepted();
 
 private:
@@ -34,6 +36,7 @@ private:
     //!
     //! \brief inputNum
     //! number from the spinbox when the dialog closes
+    //!
     int inputNum;
 };
 

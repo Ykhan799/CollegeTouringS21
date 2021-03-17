@@ -23,6 +23,7 @@ private slots:
     //!
     //! \brief on_modifyButton_clicked
     //! modifies a souvenir using data provided by UI elements
+    //!
     void on_modifyButton_clicked();
 
     //!
@@ -42,11 +43,13 @@ private slots:
     //!
     //! \brief on_deleteButton_clicked
     //! deletes the souvenir selected in the combo box
+    //!
     void on_deleteButton_clicked();
 
     //!
     //! \brief on_addButton_clicked
     //! adds a souvenir based on the information given in the add souvenir tab
+    //!
     void on_addButton_clicked();
 
 private:
@@ -55,6 +58,7 @@ private:
     //!
     //! \brief databaseInternal
     //! pointer to a DbManager object from the parent window
+    //!
     DbManager* databaseInternal;
 };
 

@@ -84,6 +84,7 @@ private slots:
     //!
     //! \brief on_souvenirsButton_clicked
     //! Opens the purchasewindow window to allow the user to purchase souvenirs specific to the currently visited campus.
+    //!
     void on_souvenirsButton_clicked();
 
 private:

@@ -23,6 +23,7 @@ public:
 
     //!
     //! \brief getChecked
+    //! returns the checked campuses
     //! \return vector of selected campuses
     //!
     vector<QString> getChecked();

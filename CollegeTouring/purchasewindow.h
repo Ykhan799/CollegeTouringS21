@@ -65,7 +65,8 @@ public:
     ~purchasewindow();
 
     //!
-    //! \brief purchases vector holds all purchases made during this session.
+    //! \brief purchases
+    //! vector holds all purchases made during this session.
     //!
     vector<Purchase> purchases;
 
