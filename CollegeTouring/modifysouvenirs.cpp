@@ -120,9 +120,10 @@ void modifySouvenirs::on_addButton_clicked()
         QMessageBox::information(this, "Error", "Souvenir already exists.");
     }else if(souvenirName.isEmpty()) {
         QMessageBox::information(this, "Error", "Please input the new souvenir's information.");
-    }else if(price == 0.0){
+    }else if(price <= 0.0){
         QMessageBox::information(this, "Error", "The new souvenir's price cannot be $0.00.");
     }else {
          databaseInternal->addSouvenir(campus, souvenirName, price);
+         QMessageBox::information(nullptr, "Success", "Added souvenir to the database.");
     }
 }
