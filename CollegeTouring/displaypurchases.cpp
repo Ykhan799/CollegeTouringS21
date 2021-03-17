@@ -50,20 +50,20 @@ void displaypurchases::populateTransactionTable(vector<Purchase>* purchaseList, 
         return;
     }
 
-    // set up the table of transactions
-    ui->transactionTableWidget->setColumnCount(5);
+//     // set up the table of transactions
+//    ui->transactionTableWidget->setColumnCount(5);
     ui->transactionTableWidget->setColumnWidth(0, 275);
     ui->transactionTableWidget->setColumnWidth(1, 225);
     ui->transactionTableWidget->setColumnWidth(2, 70);
     ui->transactionTableWidget->setColumnWidth(3, 70);
     ui->transactionTableWidget->setColumnWidth(4, 108);
-    ui->transactionTableWidget->setRowCount(1);
-    ui->transactionTableWidget->verticalHeader()->hide();
-    ui->transactionTableWidget->setHorizontalHeaderItem(0, new QTableWidgetItem("Campus"));
-    ui->transactionTableWidget->setHorizontalHeaderItem(1, new QTableWidgetItem("Souvenir"));
-    ui->transactionTableWidget->setHorizontalHeaderItem(2, new QTableWidgetItem("Price"));
-    ui->transactionTableWidget->setHorizontalHeaderItem(3, new QTableWidgetItem("Quantity"));
-    ui->transactionTableWidget->setHorizontalHeaderItem(4, new QTableWidgetItem("Total"));
+//    ui->transactionTableWidget->setRowCount(1);
+//    ui->transactionTableWidget->verticalHeader()->hide();
+//    ui->transactionTableWidget->setHorizontalHeaderItem(0, new QTableWidgetItem("Campus"));
+//    ui->transactionTableWidget->setHorizontalHeaderItem(1, new QTableWidgetItem("Souvenir"));
+//    ui->transactionTableWidget->setHorizontalHeaderItem(2, new QTableWidgetItem("Price"));
+//    ui->transactionTableWidget->setHorizontalHeaderItem(3, new QTableWidgetItem("Quantity"));
+//    ui->transactionTableWidget->setHorizontalHeaderItem(4, new QTableWidgetItem("Total"));
     ui->transactionTableWidget->setSortingEnabled(false);
 
     // save purchases that will be displayed on the table according to the campus name that was provided
@@ -82,8 +82,9 @@ void displaypurchases::populateTransactionTable(vector<Purchase>* purchaseList, 
     // create and insert items into each individual cell of the transaction table
     for (auto it = tempPurchases.begin(); it != tempPurchases.end(); it++)
     {
-        rowCount++;
+
         ui->transactionTableWidget->insertRow(rowCount);
+
 
         // populating each column in row at rowCount with correct data
         for (int j = 0; j < 5; j++)
@@ -117,6 +118,7 @@ void displaypurchases::populateTransactionTable(vector<Purchase>* purchaseList, 
             // set the item on the table at row rowCount, column j
             ui->transactionTableWidget->setItem(rowCount, j, newItem);
         }
+        rowCount++;
     }
 }
 

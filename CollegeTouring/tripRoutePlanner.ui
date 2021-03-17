@@ -112,7 +112,7 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>10</y>
+       <y>50</y>
        <width>531</width>
        <height>31</height>
       </rect>
@@ -138,9 +138,9 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>410</y>
-       <width>75</width>
-       <height>23</height>
+       <y>402</y>
+       <width>111</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="text">
@@ -150,10 +150,10 @@
     <widget class="QPushButton" name="nextButton">
      <property name="geometry">
       <rect>
-       <x>440</x>
-       <y>410</y>
-       <width>101</width>
-       <height>23</height>
+       <x>430</x>
+       <y>402</y>
+       <width>111</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="text">
@@ -164,9 +164,9 @@
      <property name="geometry">
       <rect>
        <x>210</x>
-       <y>410</y>
+       <y>402</y>
        <width>121</width>
-       <height>23</height>
+       <height>31</height>
       </rect>
      </property>
      <property name="text">
@@ -363,6 +363,45 @@
      </property>
      <property name="wordWrap">
       <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="infoField">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>150</y>
+       <width>501</width>
+       <height>221</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:600;&quot;&gt;Instructions&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;- Click &amp;quot;Next Campus&amp;quot; to progress on your college trip&lt;br/&gt;- Click &amp;quot;Souvenirs&amp;quot; to view and purchase souvenirs&lt;br/&gt;- Click &amp;quot;Cancel Trip&amp;quot; to stop your college trip&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="currentCampus">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>531</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Current Campus:</string>
+     </property>
+     <property name="textFormat">
+      <enum>Qt::AutoText</enum>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
      </property>
     </widget>
    </widget>

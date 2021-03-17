@@ -181,6 +181,7 @@ void tripRoutePlanner::on_nextButton_clicked()
     // when all campuses have been seen, change window to summary page
     else
     {
+        ui->infoField->setVisible(false);
         ui->nextButton->setVisible(false);
         ui->souvenirsButton->setText("Transactions");
         ui->exitButton->setText("Exit");
