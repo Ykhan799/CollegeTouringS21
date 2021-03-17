@@ -52,14 +52,14 @@ void displaypurchases::populateTransactionTable(vector<Purchase>* purchaseList, 
 
     ui->transactionTableWidget->clear();
 
-//     // set up the table of transactions
+    // set up the table of transactions
     ui->transactionTableWidget->setColumnCount(5);
     ui->transactionTableWidget->setColumnWidth(0, 275);
     ui->transactionTableWidget->setColumnWidth(1, 225);
     ui->transactionTableWidget->setColumnWidth(2, 70);
     ui->transactionTableWidget->setColumnWidth(3, 70);
     ui->transactionTableWidget->setColumnWidth(4, 108);
-//    ui->transactionTableWidget->setRowCount(1);
+    ui->transactionTableWidget->setRowCount(0);
     ui->transactionTableWidget->verticalHeader()->hide();
     ui->transactionTableWidget->setHorizontalHeaderItem(0, new QTableWidgetItem("Campus"));
     ui->transactionTableWidget->setHorizontalHeaderItem(1, new QTableWidgetItem("Souvenir"));
