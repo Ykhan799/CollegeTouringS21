@@ -50,20 +50,22 @@ void displaypurchases::populateTransactionTable(vector<Purchase>* purchaseList, 
         return;
     }
 
+    ui->transactionTableWidget->clear();
+
 //     // set up the table of transactions
-//    ui->transactionTableWidget->setColumnCount(5);
+    ui->transactionTableWidget->setColumnCount(5);
     ui->transactionTableWidget->setColumnWidth(0, 275);
     ui->transactionTableWidget->setColumnWidth(1, 225);
     ui->transactionTableWidget->setColumnWidth(2, 70);
     ui->transactionTableWidget->setColumnWidth(3, 70);
     ui->transactionTableWidget->setColumnWidth(4, 108);
 //    ui->transactionTableWidget->setRowCount(1);
-//    ui->transactionTableWidget->verticalHeader()->hide();
-//    ui->transactionTableWidget->setHorizontalHeaderItem(0, new QTableWidgetItem("Campus"));
-//    ui->transactionTableWidget->setHorizontalHeaderItem(1, new QTableWidgetItem("Souvenir"));
-//    ui->transactionTableWidget->setHorizontalHeaderItem(2, new QTableWidgetItem("Price"));
-//    ui->transactionTableWidget->setHorizontalHeaderItem(3, new QTableWidgetItem("Quantity"));
-//    ui->transactionTableWidget->setHorizontalHeaderItem(4, new QTableWidgetItem("Total"));
+    ui->transactionTableWidget->verticalHeader()->hide();
+    ui->transactionTableWidget->setHorizontalHeaderItem(0, new QTableWidgetItem("Campus"));
+    ui->transactionTableWidget->setHorizontalHeaderItem(1, new QTableWidgetItem("Souvenir"));
+    ui->transactionTableWidget->setHorizontalHeaderItem(2, new QTableWidgetItem("Price"));
+    ui->transactionTableWidget->setHorizontalHeaderItem(3, new QTableWidgetItem("Quantity"));
+    ui->transactionTableWidget->setHorizontalHeaderItem(4, new QTableWidgetItem("Total"));
     ui->transactionTableWidget->setSortingEnabled(false);
 
     // save purchases that will be displayed on the table according to the campus name that was provided
@@ -77,7 +79,7 @@ void displaypurchases::populateTransactionTable(vector<Purchase>* purchaseList, 
     }
 
     // display the grand total spent during the trip at the specified campus(es)
-    ui->totalLabel->setText("$" + QString::number(grandTotal));
+    ui->totalLabel->setText("$" + QString::number(grandTotal, 'f', 2));
 
     // create and insert items into each individual cell of the transaction table
     for (auto it = tempPurchases.begin(); it != tempPurchases.end(); it++)
@@ -101,13 +103,13 @@ void displaypurchases::populateTransactionTable(vector<Purchase>* purchaseList, 
                 newItem->setText( it->souvenirName );
                 break;
             case 2:
-                newItem->setText("$" + QString::number(it->price) );
+                newItem->setText("$" +  QString::number(it->price, 'f', 2));
                 break;
             case 3:
                 newItem->setText( QString::number(it->numberPurchased) );
                 break;
             case 4:
-                newItem->setText("$" + QString::number(it->totalSpent) );
+                newItem->setText("$" + QString::number(it->totalSpent, 'f', 2) );
                 break;
             default:
                 break;

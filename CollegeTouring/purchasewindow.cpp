@@ -20,7 +20,7 @@ purchasewindow::purchasewindow(QWidget *parent, const QString& campus) :
     // append price listings to all souvenir options in the souvenirs vector
     for(auto it = souvenirs.begin(); it != souvenirs.end(); it++)
     {
-        tempStr = QString::number( database->getSouvenirPrice(*it, campus) );
+        tempStr = QString::number( database->getSouvenirPrice(*it, campus), 'f', 2 );
         pricedSouvenir = souvenirs[tempInt];
         pricedSouvenir.append(" - $");
         pricedSouvenir.append(tempStr);
@@ -62,7 +62,7 @@ void purchasewindow::on_purchaseButton_clicked()
 
         // string to display on purchase success notification
         purchaseTotalStr = "Total cost for purchase: $";
-        purchaseTotalStr.append( QString::number(newPurchase.totalSpent) );
+        purchaseTotalStr.append( QString::number(newPurchase.totalSpent, 'f', 2) );
 
         // purchase success notification
         QMessageBox::information(this, "Purchase Successful!", purchaseTotalStr);
