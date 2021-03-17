@@ -116,9 +116,22 @@ void databaseViewForm::on_addCampus_clicked()
     if (isAdmin)
     {
         // opens new campus window
-        addcampus = new addcampuses(nullptr);
+        addcampus = new addcampuses(nullptr, database);
         addcampus->exec();
         delete addcampus;
+
+        on_displayDistButton_clicked();
+        on_displaySouvButton_clicked();
+
+        vector<QString> temp = database->getCampusNames();
+         // populate campuses combo box
+        ui->collegeSelectBox->clear();
+        ui->collegeSelectBoxSouv->clear();
+        for(auto &i : database->getCampusNames()) {
+            ui->collegeSelectBox->addItem(i);
+            ui->collegeSelectBoxSouv->addItem(i);
+        }
+
     }
     else
     {

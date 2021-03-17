@@ -8,7 +8,7 @@ addcampuses::addcampuses(QWidget *parent, DbManager *database) :
 
     databaseExternal = database;
 
-    if(databaseExternal == nullptr) {
+    if(!databaseExternal) {
         const QString FILE_NAME = "collegetouring.db";
         QString dbPath = qApp->applicationDirPath();
         dbPath.append('/' + FILE_NAME);
@@ -48,7 +48,7 @@ void addcampuses::on_addFile_clicked()
 
     else
     {
-        while (inFile)
+        while (!inFile.eof())
         {
             // reads the two campuses and distances
             getline(inFile, startingDist);
