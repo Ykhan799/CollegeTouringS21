@@ -13,11 +13,13 @@ SOURCES += \
     addcampuses.cpp \
     databaseviewform.cpp \
     dbmanager.cpp \
+    displaypurchases.cpp \
     logindialog.cpp \
     main.cpp \
     mainwindow.cpp \
     modifysouvenirs.cpp \
     numberinputdialog.cpp \
+    purchasewindow.cpp \
     shoppingcart.cpp \
     tripRoutePlanner.cpp
 
@@ -26,10 +28,12 @@ HEADERS += \
     addcampuses.h \
     databaseviewform.h \
     dbmanager.h \
+    displaypurchases.h \
     logindialog.h \
     mainwindow.h \
     modifysouvenirs.h \
     numberinputdialog.h \
+    purchasewindow.h \
     shoppingcart.h \
     tripRoutePlanner.h
 
@@ -37,10 +41,12 @@ FORMS += \
     campusselectdialog.ui \
     addcampuses.ui \
     databaseviewform.ui \
+    displaypurchases.ui \
     logindialog.ui \
     mainwindow.ui \
     modifysouvenirs.ui \
     numberinputdialog.ui \
+    purchasewindow.ui \
     shoppingcart.ui \
     tripRoutePlanner.ui
 

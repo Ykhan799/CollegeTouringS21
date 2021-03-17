@@ -24,6 +24,8 @@ class databaseViewForm : public QDialog
 public:
     explicit databaseViewForm(QWidget *parent = nullptr, bool adminUser = false, DbManager* databaseManager = nullptr);
     ~databaseViewForm();
+
+
     std::vector<QString> getActiveTableRow();
 
 private slots:
@@ -57,7 +59,6 @@ private:
     DbManager* database;
     modifySouvenirs* modDialog;
     addcampuses *addcampus;
-
 
     bool isAdmin;
 
