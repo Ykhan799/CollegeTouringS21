@@ -242,7 +242,8 @@ bool DbManager::campusExists(QString& campus)
     else
     {
         // campus found in database
-        found = query.first();
+        query.first();
+        found = query.value(0).toBool();
         qDebug() << found;
     }
 
@@ -316,7 +317,8 @@ bool campusExists(QString& startCampus, QString& endCampus, double& distance)
           return false;
     }
 
-    found = query.first();
+    query.first();
+    found = query.value(0).toBool();
 
     //qDebug() << "found: " << found;
 
