@@ -60,14 +60,7 @@ void addcampuses::on_addFile_clicked()
             QString startDist = QString::fromStdString(startingDist);
             QString endDist = QString::fromStdString(endingDist);
 
-            // Checks if Campus is added
-            if (campusExists(startDist, endDist, distance))
-            {
-                QMessageBox::information(this, QObject::tr("System Message"), tr("Campus already exists. Cannot add campus"));
-                break;
-            }
-            else
-            {
+
                 QSqlQuery query;
                 query.prepare("SELECT max(ID) from CAMPUSES"); // get the maximum id from the table
                 query.exec();
@@ -94,14 +87,12 @@ void addcampuses::on_addFile_clicked()
                 } else {
                     qDebug() << "Error: addCampus did not get an ID value from the table.";
                 }
-            }
 
           }
         // closes file
          inFile.close();
     }
 }
-
 
 void addcampuses::on_AddCampus_clicked()
 {
