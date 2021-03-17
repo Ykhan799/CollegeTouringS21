@@ -219,10 +219,17 @@ void tripRoutePlanner::on_souvenirsButton_clicked()
 
     else
     {
-//        vector<Purchase>* temp = &tripPurchases;
-//        displayPurchases = new displaypurchases(nullptr, temp);
-//        displayPurchases->setWindowFlags(Qt::Dialog | Qt::WindowTitleHint);
-//        displayPurchases->exec();
-//        delete displayPurchases;
+        if (tripPurchases.empty())
+        {
+            QMessageBox::information(this, "Error!", "No transactions were made during this trip.");
+        }
+        else
+        {
+            vector<Purchase>* purchasesPtr = &tripPurchases;
+            displayPurchases = new displaypurchases(nullptr, purchasesPtr);
+            displayPurchases->setWindowFlags(Qt::Dialog | Qt::WindowTitleHint);
+            displayPurchases->exec();
+            delete displayPurchases;
+        }
     }
 }

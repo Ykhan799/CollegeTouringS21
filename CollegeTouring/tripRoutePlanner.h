@@ -9,15 +9,34 @@
 #include "purchasewindow.h"
 #include "displaypurchases.h"
 
+
+
+/*! \file tripRoutePlanner.h
+ *  \brief A file outlining tripRoutePlanner class methods.
+ */
+
+
+
+//!
+//! \brief The TripType enum holds enumeration values for all available types of trips that can be taken.
+//!
 enum TripType {
-    UCI,
-    ASU,
-    SADDLEBACK,
-    CUSTOM
+    UCI,        /*!< The trip starts at University of California, Irvine and visits all campuses. */
+    ASU,        /*!< The trip starts at Arizona State University and visits all selected campuses. */
+    SADDLEBACK, /*!< The trip starts at Saddleback College and visits the initial 11 campuses. */
+    CUSTOM      /*!< The trip is custom and is planned according to user input. */
 };
 
 namespace Ui { class tripRoutePlanner; }
 
+
+/*!
+ * \brief The tripRoutePlanner class provides functionality to plan and go on trips to several different college campuses.
+ *
+ * The tripRoutePlanner class has public inheritance of QDialog. The class is responsible for the display and function
+ * of the trip planning features of the program. It alters its functionality for user input depending on whether a trip is predetermined
+ * in its route or not. It also provides functionality to open souvenir purchase windows.
+ */
 class tripRoutePlanner : public QDialog
 {
     Q_OBJECT
@@ -62,6 +81,9 @@ private slots:
     //!
     void on_nextButton_clicked();
 
+    //!
+    //! \brief on_souvenirsButton_clicked
+    //! Opens the purchasewindow window to allow the user to purchase souvenirs specific to the currently visited campus.
     void on_souvenirsButton_clicked();
 
 private:
@@ -89,13 +111,11 @@ private:
     //!
     //! \brief currentCampus holds the name of the current campus in the trip
     //!
-
     QString currentCampus;
 
     //!
     //! \brief purchases holds all current purchases in the trip
     //!
-
     vector<Purchase> tripPurchases;
 
     //!

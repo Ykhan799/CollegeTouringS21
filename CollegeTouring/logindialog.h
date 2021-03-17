@@ -24,6 +24,9 @@ private slots:
 private:
     Ui::loginDialog *ui;
 
+    //!
+    //! \brief isLoggedIn holds whether the user is logged in as an administrator.
+    //!
     bool isLoggedIn;
 };
 
