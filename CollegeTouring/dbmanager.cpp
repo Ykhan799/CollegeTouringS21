@@ -177,7 +177,7 @@ void DbManager::addSouvenir(const QString &campus, const QString &souvenirName, 
     if(query.next()) {
         maxID =  query.value(0).toInt();
         maxID++;
-        qDebug() << maxID;
+        // qDebug() << maxID;
 
         query.prepare("INSERT INTO SOUVENIRS VALUES(:ID, :CAMPUS, :SOUVENIRNAME, :SOUVENIRPRICE)");
         query.bindValue(":ID", maxID); // id is the id of the bottom row + 1
@@ -214,9 +214,10 @@ bool DbManager::souvExists(QString &campus, QString &souvenirName)
           return false;
     }
 
-    found = query.first();
+    query.first();
+    found = query.value(0).toBool();
 
-    //qDebug() << "found: " << found;
+    // qDebug() << "found: " << found;
 
     return found;
 }
@@ -242,6 +243,7 @@ bool DbManager::campusExists(QString& campus)
     {
         // campus found in database
         found = query.first();
+        qDebug() << found;
     }
 
     return found;

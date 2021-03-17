@@ -37,6 +37,8 @@ private slots:
 
     void on_saddlebackButton_clicked();
 
+    void on_customButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     databaseViewForm* dbView;
