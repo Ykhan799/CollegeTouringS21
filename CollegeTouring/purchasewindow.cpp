@@ -42,30 +42,13 @@ purchasewindow::~purchasewindow()
 
 void purchasewindow::on_purchaseButton_clicked()
 {
-    Purchase newPurchase;                                 // Purchase object for current purchase
-    QString purchaseCountStr = ui->purchaseEntry->text(); // user input for # of souvenirs to purchase
-    QString purchaseTotalStr;                             // used to display how much was spent in a purchase
-    int purchaseCount = purchaseCountStr.toInt();         // conversion of input for # of souvenirs
-    bool invalid = false;                                 // whether the input is invalid for # souvenirs to purchase
+    Purchase newPurchase;     // Purchase object for current purchase
+    QString purchaseTotalStr; // used to display how much was spent in a purchase
+    int purchaseCount;        // used to retrieve the number of items purchased
 
-    // check for letters in string
-    for (int i = 0; i < purchaseCountStr.size(); i++)
-    {
-        if (purchaseCountStr[i].isLetter())
-        {
-            // invalid set to true and break if letter is found
-            invalid = true;
-            break;
-        }
-    }
+    purchaseCount = ui->purchaseEntry->value();
 
-    // invalid input
-    if (invalid || purchaseCountStr == "" || purchaseCount < 0 )
-    {
-        QMessageBox::information(this, "Error", "Please enter a valid number.");
-        ui->purchaseEntry->setText("");
-    }
-    else
+    if (purchaseCount > 0)
     {
         // set up new Purchase object
         newPurchase.campusName = currentCampus;
@@ -83,9 +66,9 @@ void purchasewindow::on_purchaseButton_clicked()
 
         // purchase success notification
         QMessageBox::information(this, "Purchase Successful!", purchaseTotalStr);
-
-        ui->purchaseEntry->setText("");
     }
+
+    ui->purchaseEntry->setValue(1);
 }
 
 void purchasewindow::on_doneButton_clicked()
