@@ -116,8 +116,8 @@ double DbManager::getSouvenirPrice(const QString &souvenir, const QString &campu
 
     if(query.next()) {
 
-        QString out = query.value(0).toString();
-        //qDebug() << "souvenir price: " << out;
+        // QString out = query.value(0).toString();
+        // qDebug() << "souvenir price: " << out;
 
         return query.value(0).toDouble();
     }else {
