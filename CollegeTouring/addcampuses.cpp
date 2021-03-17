@@ -59,8 +59,13 @@ void addcampuses::on_addFile_clicked()
             // gets the starting and ending campus
             QString startDist = QString::fromStdString(startingDist);
             QString endDist = QString::fromStdString(endingDist);
-
-
+                 
+            // Checks if a given campus exists 
+                if (campusExists(startDist, endDist, distance))
+                {
+                    QMessageBox::warning(this, "Error", "Campus Exists");
+                    break;
+                }
                 QSqlQuery query;
                 query.prepare("SELECT max(ID) from CAMPUSES"); // get the maximum id from the table
                 query.exec();
@@ -117,7 +122,8 @@ bool addcampuses::campusExists(QString& start, QString& end, double& distance)
           return false;
     }
 
-    found = query.first();
+    query.first();
+    found = query.value(0).toBool();
 
     //qDebug() << "found: " << found;
 
