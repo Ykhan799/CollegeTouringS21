@@ -48,7 +48,7 @@ void addcampuses::on_addFile_clicked()
 
     else
     {
-        while (!inFile.eof())
+        while (!inFile.eof() && inFile.peek() != '\n')
         {
             // reads the two campuses and distances
             getline(inFile, startingDist);
