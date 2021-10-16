@@ -32,4 +32,11 @@ Develop a College Touring Application allowing user to plan campus visits.
 ### Admin Login
 <img width="411" alt="Screen Shot 2021-10-16 at 12 58 38 AM" src="https://user-images.githubusercontent.com/78000116/137579493-db26002b-bbbc-45e2-872e-3ca30c19ee9f.png">
 
+### Add, Delete, Modify Souvenirs(Admin Only)
+<img width="576" alt="Screen Shot 2021-10-16 at 1 01 51 AM" src="https://user-images.githubusercontent.com/78000116/137579734-c1143cc1-3e11-4243-91ba-6a835ba3466b.png">
+
+### After Modifying Souvenir
+<img width="799" alt="Screen Shot 2021-10-16 at 1 03 20 AM" src="https://user-images.githubusercontent.com/78000116/137579758-f4812c22-de41-48ca-94d7-8521a3c9486a.png">
+
+
 
