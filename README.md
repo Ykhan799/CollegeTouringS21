@@ -38,5 +38,8 @@ Develop a College Touring Application allowing user to plan campus visits.
 ### After Modifying Souvenir
 <img width="799" alt="Screen Shot 2021-10-16 at 1 03 20 AM" src="https://user-images.githubusercontent.com/78000116/137579758-f4812c22-de41-48ca-94d7-8521a3c9486a.png">
 
+### Adding Campuses(Admin Only)
+<img width="403" alt="Screen Shot 2021-10-16 at 1 04 35 AM" src="https://user-images.githubusercontent.com/78000116/137579788-dcb44bc6-622c-4793-a08a-2742b1884ca7.png">
 
-
+### Viewing Campus Distances
+<img width="804" alt="Screen Shot 2021-10-16 at 1 06 05 AM" src="https://user-images.githubusercontent.com/78000116/137579817-f8451af7-6074-44d0-a76e-92955694876b.png">
