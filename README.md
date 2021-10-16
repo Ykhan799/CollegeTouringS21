@@ -5,6 +5,7 @@ Team AYEN Project 1 - Saddleback College Spring 2021
 * Nicholas Lozano - Scrum Master
 * Ethan Lew - Product Owner
 * Yaseen Khan - Developer
+* Adrian Hernandez - Developer
 
 ## Goal
 Develop a College Touring Application allowing user to plan campus visits.
